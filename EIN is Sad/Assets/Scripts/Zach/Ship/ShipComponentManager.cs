@@ -143,7 +143,7 @@ public class ShipComponentManager : MonoBehaviour
 
     private bool DamageThrusters()
     {
-        if(thrusterIndex >= 0)
+        if(thrusterIndex > 0)
         {
             thrusterIndex--;
             shipController.SetThruster(thrusters[thrusterIndex]);
@@ -160,7 +160,7 @@ public class ShipComponentManager : MonoBehaviour
 
     private bool DamageTurners()
     {
-        if (turnerIndex >= 0)
+        if (turnerIndex > 0)
         {
             turnerIndex--;
             shipController.SetTurner(turners[turnerIndex]);
@@ -176,7 +176,7 @@ public class ShipComponentManager : MonoBehaviour
 
     private bool DamageShooters()
     {
-        if (shooterIndex >= 0)
+        if (shooterIndex > 0)
         {
             shooterIndex--;
             shipController.SetShooter(shooters[shooterIndex]);
@@ -191,7 +191,7 @@ public class ShipComponentManager : MonoBehaviour
 
     private bool RepairThrusters()
     {
-        if (thrusterIndex < thrusters.Count)
+        if (thrusterIndex < thrusters.Count - 1)
         {
             thrusterIndex++;
             shipController.SetThruster(thrusters[thrusterIndex]);
@@ -207,7 +207,7 @@ public class ShipComponentManager : MonoBehaviour
 
     private bool RepairTurners()
     {
-        if (turnerIndex < turners.Count)
+        if (turnerIndex < turners.Count - 1)
         {
             turnerIndex++;
             shipController.SetTurner(turners[turnerIndex]);
@@ -223,7 +223,7 @@ public class ShipComponentManager : MonoBehaviour
 
     private bool RepairShooters()
     {
-        if (shooterIndex < shooters.Count)
+        if (shooterIndex < shooters.Count - 1)
         {
             shooterIndex++;
             shipController.SetShooter(shooters[shooterIndex]);
