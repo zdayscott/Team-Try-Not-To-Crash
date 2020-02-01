@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 63
+  controlID: 38
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -344,8 +344,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts/Zach
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Zach\Documents\GitHub\Team-Try-Not-To-Crash\EIN is
-    Sad
+  m_LastProjectPath: C:\Users\dcars\Documents\Team-Try-Not-To-Crash\EIN is Sad
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -565,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.4552578, y: 0.30550292, z: -7.3693495}
+    m_Target: {x: 538.56, y: 334.608, z: 0}
     speed: 2
-    m_Value: {x: -1.4552578, y: 0.30550292, z: -7.3693495}
+    m_Value: {x: 538.56, y: 334.608, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -617,9 +616,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.923565
+    m_Target: 585.03064
     speed: 2
-    m_Value: 8.923565
+    m_Value: 585.03064
   m_Ortho:
     m_Target: 1
     speed: 2
