@@ -321,12 +321,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1220891382}
-        m_MethodName: 
+      - m_Target: {fileID: 1220891384}
+        m_MethodName: firstButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 884187829}
   - component: {fileID: 884187828}
   m_Layer: 5
-  m_Name: Text
+  m_Name: displayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: If this shows up, things have gone wrong
 --- !u!222 &884187829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -656,9 +656,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220891382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b630af5e989bb148b4d2ff7b905267c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8859c8da8d1c1ba47a15bbef92b028f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstWorld: {fileID: 4900000, guid: 711220332355006498534764eb2561f4, type: 3}
+  displayText: {fileID: 884187828}
 --- !u!114 &1220891385
 MonoBehaviour:
   m_ObjectHideFlags: 0
