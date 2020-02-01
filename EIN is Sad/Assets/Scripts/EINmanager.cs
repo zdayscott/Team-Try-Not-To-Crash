@@ -9,15 +9,21 @@ public class EINmanager : MonoBehaviour
 {
     public TextAsset firstWorld;
     public Text displayText;
-
-
+    private string currentLine = "";
+    private string lineWithInts = "";
     private List<string> firstWorldLines;
+
+    private List<string> chosenLines = new List<string>();
+    private List<int> currentOptions;
+
+
+    private int wrongAnswers = 0;
+    private int correctAnswers = 0;
     // Start is called before the first frame update
     void Start()
     {
         firstWorldLines = firstWorld.text.Split('\n').ToList();
         displayText.text = "Hello world. My name is E.I.N., or Emotionally Intelligent Network. How can I assist you today?";
-        print(getLine("insert line here|1, 2"));
     }
 
     // Update is called once per frame
@@ -26,31 +32,61 @@ public class EINmanager : MonoBehaviour
         
     }
     
-    private string getLine(string totalLine)
+    private string getLine()
     {
+        string totalLine = firstWorldLines[UnityEngine.Random.Range(0, firstWorldLines.Count)];
+        while (chosenLines.Contains(totalLine) == true)
+        {
+            totalLine = firstWorldLines[UnityEngine.Random.Range(0, firstWorldLines.Count)];
+        }
+        chosenLines.Add(totalLine);
+        firstWorldLines.Remove(totalLine);
         string line = totalLine.Split('|')[0];
+        currentLine = line;
+        lineWithInts = totalLine;
         return line;
     }
 
-    private List<int> getInts(string totalLine)
+    private void getInts()
     {
-        string line = totalLine.Split('|')[1];
-        List<string> intStrings = line.Split(',').ToList();
-        List<int> ints = new List<int>();
+        string line = lineWithInts.Split('|')[1];
+        List<string> intStrings = line.Split('-').ToList();
+        currentOptions = new List<int>();
         for (int i = 0; i < intStrings.Count; ++i)
         {
-            ints.Add(Int32.Parse(intStrings[i]));
+            currentOptions.Add(Int32.Parse(intStrings[i]));
         }
-        return ints;
     }
 
     public void firstButton()
     {
-        print("first button clicked");
+        getButton(1);
     }
 
     public void secondButton()
     {
-        print("second button clicked");
+        getButton(2);
+        //print("second button clicked");
+    }
+
+    private void getButton(int i)
+    {
+        getLine();
+        getInts();
+        if (currentOptions.Contains(i))
+        {
+            correctAnswers++;
+        }
+        else
+        {
+            wrongAnswers++;
+        }
+        print("" + correctAnswers + " " + wrongAnswers);
+        updateDisplay();
+    }
+
+    private void updateDisplay()
+    {
+        displayText.text = currentLine;
     }
 }
