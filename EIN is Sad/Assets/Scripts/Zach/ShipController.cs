@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
@@ -12,40 +10,54 @@ public class ShipController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(mThruster == null)
+        {
+            mThruster = GetComponent<IThruster>();
+        }
+
+        if(mTurner == null)
+        {
+            mTurner = GetComponent<ITurner>();
+        }
+
+        if(mShooter == null)
+        {
+            mShooter = GetComponent<IShooter>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Vertical"))
+        if(Input.GetButton("Vertical"))
         {
+            Debug.Log("Thrusting!!");
+            mThruster.Thrust();
+        }
 
+        if(Input.GetButtonDown("Horizontal"))
+        {
+            mTurner.Turn(Input.GetAxis("Horizontal"));
+        }
+
+        if(Input.GetButton("Fire1"))
+        {
+            mShooter.Shoot();
         }
     }
 }
 
 public interface IThruster
 {
-    public void Thrust()
-    {
-
-    }
+    void Thrust();
 }
 
 public interface ITurner
 {
-    public void Turn()
-    {
-
-    }
-
+    void Turn(float f);
 }
 
 public interface IShooter
 {
-        public void Shoot()
-    {
-        
-    }
+    void Shoot();
 }
