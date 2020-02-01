@@ -8,6 +8,7 @@ public class sceneManager : MonoBehaviour
     string currentScene;
     string creditsScene = "creditsScene";
     string titleScene = "titleScreen";
+    string mainGame = "mainGame";
     private void Awake()
     {
         currentScene = SceneManager.GetActiveScene().name;
@@ -29,5 +30,13 @@ public class sceneManager : MonoBehaviour
     public void switchToTitleScene()
     {
         SceneManager.LoadScene(titleScene);
+    }
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+    public void switchToGame()
+    {
+        SceneManager.LoadScene(mainGame);
     }
 }
