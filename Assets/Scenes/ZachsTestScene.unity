@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 6272612573093760884, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
       propertyPath: shootpoints.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6272612573093760884, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
@@ -290,12 +290,17 @@ PrefabInstance:
         type: 3}
       propertyPath: shootpoints.Array.data[0]
       value: 
-      objectReference: {fileID: 487485319}
+      objectReference: {fileID: 363534763}
     - target: {fileID: 6272612573093760884, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
       propertyPath: shootpoints.Array.data[1]
       value: 
       objectReference: {fileID: 1797520228}
+    - target: {fileID: 6272612573093760884, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: shootpoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 363534763}
     - target: {fileID: 6272612573093760885, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
       propertyPath: shootpoints.Array.size
@@ -312,6 +317,11 @@ PrefabInstance:
       propertyPath: shootpoints.Array.data[0]
       value: 
       objectReference: {fileID: 363534763}
+    - target: {fileID: 6272612573093760885, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: variance
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6272612573527416344, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -411,6 +421,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1601630998, guid: 3f4b9c392173ac645b8b08f7e271d073, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601630998, guid: 3f4b9c392173ac645b8b08f7e271d073, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 7897826641832828825, guid: 3f4b9c392173ac645b8b08f7e271d073,
         type: 3}
       propertyPath: m_Name
