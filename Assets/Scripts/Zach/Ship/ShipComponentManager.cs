@@ -33,9 +33,13 @@ public class ShipComponentManager : MonoBehaviour
             shipController = FindObjectOfType<ShipController>();
         }
 
-        thrusterIndex = thrusters.Count;
-        turnerIndex = turners.Count;
-        shooterIndex = shooters.Count;
+        thrusterIndex = thrusters.Count - 1;
+        turnerIndex = turners.Count - 1;
+        shooterIndex = shooters.Count - 1;
+
+        shipController.SetThruster(thrusters[thrusterIndex]);
+        shipController.SetTurner(turners[turnerIndex]);
+        shipController.SetShooter(shooters[shooterIndex]);
     }
 
     private void Update()

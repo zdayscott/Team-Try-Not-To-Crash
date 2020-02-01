@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6272612572822624733}
-  - component: {fileID: 6272612572822624722}
-  - component: {fileID: 6272612572822624723}
   - component: {fileID: 6272612572822624732}
+  - component: {fileID: 6272612572822624723}
+  - component: {fileID: 6272612572822624722}
   m_Layer: 0
   m_Name: Turner
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 6272612573076560960}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6272612572822624722
+--- !u!114 &6272612572822624732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6272612572822624734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68b00b552cf81524d8a8ebe4a79f2606, type: 3}
+  m_Script: {fileID: 11500000, guid: 9198147d11221254bafa75f695a7870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   modifier: 2
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifier: 2
   angularDrag: 1.5
---- !u!114 &6272612572822624732
+--- !u!114 &6272612572822624722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6272612572822624734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9198147d11221254bafa75f695a7870a, type: 3}
+  m_Script: {fileID: 11500000, guid: 68b00b552cf81524d8a8ebe4a79f2606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   modifier: 2
@@ -130,9 +130,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6272612573093760886}
-  - component: {fileID: 6272612573093760843}
-  - component: {fileID: 6272612573093760884}
   - component: {fileID: 6272612573093760885}
+  - component: {fileID: 6272612573093760884}
+  - component: {fileID: 6272612573093760843}
   m_Layer: 0
   m_Name: Shooters
   m_TagString: Untagged
@@ -154,7 +154,7 @@ Transform:
   m_Father: {fileID: 6272612573076560960}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6272612573093760843
+--- !u!114 &6272612573093760885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6272612573093760887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfeea563cf6a67649b4b92782451530a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e51e21326defc6459090c3ba6156ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   shootpoints: []
---- !u!114 &6272612573093760885
+--- !u!114 &6272612573093760843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6272612573093760887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e51e21326defc6459090c3ba6156ee3, type: 3}
+  m_Script: {fileID: 11500000, guid: cfeea563cf6a67649b4b92782451530a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
@@ -236,9 +236,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6272612573869854705}
-  - component: {fileID: 6272612573869854710}
-  - component: {fileID: 6272612573869854711}
   - component: {fileID: 6272612573869854704}
+  - component: {fileID: 6272612573869854711}
+  - component: {fileID: 6272612573869854710}
   m_Layer: 0
   m_Name: Thrusters
   m_TagString: Untagged
@@ -260,7 +260,7 @@ Transform:
   m_Father: {fileID: 6272612573076560960}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6272612573869854710
+--- !u!114 &6272612573869854704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6272612573869854706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 002850b5989614a4dad97b9a78947b38, type: 3}
+  m_Script: {fileID: 11500000, guid: becf4d7c7c4a5ae48af7f0a4788499d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 0
   maxSpeed: 0
---- !u!114 &6272612573869854704
+--- !u!114 &6272612573869854710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6272612573869854706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: becf4d7c7c4a5ae48af7f0a4788499d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 002850b5989614a4dad97b9a78947b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 0

@@ -42,7 +42,7 @@ public class ShipController : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            //mShooter.Shoot();
+            mShooter.Shoot();
         }
     }
 
