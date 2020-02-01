@@ -9,7 +9,6 @@ public class EasyThruster : MonoBehaviour, IThruster
 
     private Rigidbody2D rb;
 
-
     public void Thrust(float m)
     {
         if(maxSpeed >= rb.velocity.magnitude)
@@ -25,6 +24,12 @@ public class EasyThruster : MonoBehaviour, IThruster
 
     private void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        var ship = FindObjectOfType<ShipController>();
+        rb = ship.GetComponent<Rigidbody2D>();
+    }
+
+    public void OnAttach()
+    {
+        // Do Stuff
     }
 }

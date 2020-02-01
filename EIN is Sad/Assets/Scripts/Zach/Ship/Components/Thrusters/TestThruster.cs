@@ -9,7 +9,6 @@ public class TestThruster : MonoBehaviour, IThruster
 
     private Rigidbody2D rb;
 
-
     public void Thrust(float m)
     {
         if (maxSpeed >= rb.velocity.magnitude)
@@ -26,5 +25,10 @@ public class TestThruster : MonoBehaviour, IThruster
     private void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+    }
+
+    public void OnAttach()
+    {
+        throw new System.NotImplementedException();
     }
 }

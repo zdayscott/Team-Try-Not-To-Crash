@@ -25,6 +25,12 @@ public class HardThruster : MonoBehaviour, IThruster
 
     private void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        var ship = FindObjectOfType<ShipController>();
+        rb = ship.GetComponent<Rigidbody2D>();
+    }
+
+    public void OnAttach()
+    {
+        // Do Stuff
     }
 }

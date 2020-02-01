@@ -1,15 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ShipComponentManager : MonoBehaviour
 {
     [SerializeField]
-    private IThruster[] thrusters;
+    private List<IThruster> thrusters = new List<IThruster>();
     private int thrusterIndex;
+
     [SerializeField]
-    private ITurner[] turners;
+    private List<ITurner> turners = new List<ITurner>();
     private int turnerIndex;
+
     [SerializeField]
-    private IShooter[] shooters;
+    private List<IShooter> shooters = new List<IShooter>();
     private int shooterIndex;
 
     private ShipController shipController;
@@ -18,30 +21,34 @@ public class ShipComponentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(thrusters.Length <= 0)
-        {
-            thrusters = GetComponents<IThruster>();
-        }
 
-        if(turners.Length <= 0)
-        {
-            turners = GetComponents<ITurner>();
+        thrusters.AddRange(GetComponentsInChildren<IThruster>());
+        
+        turners.AddRange(GetComponentsInChildren<ITurner>());
 
-        }
-
-        if(shooters.Length <= 0)
-        {
-            shooters = GetComponents<IShooter>();
-        }
+        shooters.AddRange(GetComponentsInChildren<IShooter>());
 
         if(shipController == null)
         {
             shipController = FindObjectOfType<ShipController>();
         }
 
-        thrusterIndex = thrusters.Length;
-        turnerIndex = turners.Length;
-        shooterIndex = shooters.Length;
+        thrusterIndex = thrusters.Count;
+        turnerIndex = turners.Count;
+        shooterIndex = shooters.Count;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RepairShip();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            HarmShip();
+        }
     }
 
     public void HarmShip()
@@ -89,12 +96,60 @@ public class ShipComponentManager : MonoBehaviour
         }
     }
 
+    public void RepairShip()
+    {
+        int seed = Random.Range(0, 2);
+
+        switch (seed)
+        {
+            case 0:
+                if (!RepairThrusters())
+                {
+                    if (!RepairTurners())
+                    {
+                        if (!RepairShooters())
+                        {
+
+                        }
+                    }
+                }
+                break;
+            case 1:
+                if (!RepairTurners())
+                {
+                    if (!RepairShooters())
+                    {
+                        if (!RepairThrusters())
+                        {
+
+                        }
+                    }
+                }
+                break;
+            case 2:
+                if (!RepairShooters())
+                {
+                    if (!RepairThrusters())
+                    {
+                        if (!RepairTurners())
+                        {
+
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
     private bool DamageThrusters()
     {
         if(thrusterIndex >= 0)
         {
             thrusterIndex--;
             shipController.SetThruster(thrusters[thrusterIndex]);
+            thrusters[thrusterIndex].OnAttach();
+
+            print(thrusters[thrusterIndex].ToString());
             return true;
         }
         else
@@ -109,6 +164,8 @@ public class ShipComponentManager : MonoBehaviour
         {
             turnerIndex--;
             shipController.SetTurner(turners[turnerIndex]);
+            turners[turnerIndex].OnAttach();
+            print(turners[turnerIndex].ToString());
             return true;
         }
         else
@@ -123,6 +180,54 @@ public class ShipComponentManager : MonoBehaviour
         {
             shooterIndex--;
             shipController.SetShooter(shooters[shooterIndex]);
+            print(shooters[shooterIndex].ToString());
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool RepairThrusters()
+    {
+        if (thrusterIndex < thrusters.Count)
+        {
+            thrusterIndex++;
+            shipController.SetThruster(thrusters[thrusterIndex]);
+            thrusters[thrusterIndex].OnAttach();
+            print(thrusters[thrusterIndex].ToString());
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool RepairTurners()
+    {
+        if (turnerIndex < turners.Count)
+        {
+            turnerIndex++;
+            shipController.SetTurner(turners[turnerIndex]);
+            turners[turnerIndex].OnAttach();
+            print(turners[turnerIndex].ToString());
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool RepairShooters()
+    {
+        if (shooterIndex < shooters.Count)
+        {
+            shooterIndex++;
+            shipController.SetShooter(shooters[shooterIndex]);
+            print(shooters[shooterIndex].ToString());
             return true;
         }
         else

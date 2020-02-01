@@ -18,7 +18,18 @@ public class MediumTurner : MonoBehaviour, ITurner
     {
         if (rb == null)
         {
-            rb = GetComponent<Rigidbody2D>();
+            rb = FindObjectOfType<ShipController>().GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.angularDrag = angularDrag;
+            }
+        }
+    }
+
+    public void OnAttach()
+    {
+        if (rb != null)
+        {
             rb.angularDrag = angularDrag;
         }
     }

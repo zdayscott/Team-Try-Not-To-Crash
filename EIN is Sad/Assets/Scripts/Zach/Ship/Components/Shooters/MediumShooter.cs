@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MediumShooter : MonoBehaviour
+public class MediumShooter : MonoBehaviour, IShooter
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject projectile;
+    [SerializeField]
+    private Transform[] shootpoints;
 
-    // Update is called once per frame
-    void Update()
+    public void Shoot()
     {
-        
+        for (int i = 0; i < shootpoints.Length; i++)
+        {
+            Instantiate(projectile, shootpoints[i]);
+        }
     }
 }

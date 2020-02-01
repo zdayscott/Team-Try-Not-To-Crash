@@ -40,9 +40,9 @@ public class ShipController : MonoBehaviour
             mTurner.Turn(-1 * Input.GetAxis("Horizontal"));
         }
 
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButtonDown("Fire1"))
         {
-            mShooter.Shoot();
+            //mShooter.Shoot();
         }
     }
 
@@ -67,11 +67,15 @@ public class ShipController : MonoBehaviour
 public interface IThruster
 {
     void Thrust(float m);
+
+    void OnAttach();
 }
 
 public interface ITurner
 {
     void Turn(float f);
+
+    void OnAttach();
 }
 
 public interface IShooter
