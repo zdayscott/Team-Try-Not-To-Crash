@@ -10,16 +10,23 @@ public class EINmanager : MonoBehaviour
     public GameObject ship;
     public TextAsset firstWorld;
     public Text displayText;
+    public Slider timerSlider;
+
+    public float maxTime = 5f;
+    private float currentTime;
+
     private string currentLine = "";
     private string lineWithInts = "";
     private List<string> firstWorldLines;
 
     private List<string> chosenLines = new List<string>();
-    private List<int> currentOptions;
+    private List<int> currentOptions = new List<int>(){ 1, 2 };
 
 
     private int wrongAnswers = 0;
     private int correctAnswers = 0;
+    private int totalCorrect = 0;
+    private int totalWrong = 0;
     private int[] correctStreaks = { 1, 1, 2, 4, 5, 5, 5 };
     private int[] wrongStreaks = { 0, 1, 2, 4, 4, 4, 4, 4, 4 };
     // Start is called before the first frame update
@@ -27,9 +34,17 @@ public class EINmanager : MonoBehaviour
     {
         firstWorldLines = firstWorld.text.Split('\n').ToList();
         displayText.text = "Hello world. My name is E.I.N., or Emotionally Intelligent Network. How can I assist you today?";
+        currentTime = maxTime;
     }
     private void Update()
     {
+        timerSlider.value = currentTime / maxTime;
+        currentTime -= Time.deltaTime;
+        if (currentTime <= 0)
+        {
+            getButton(3);
+            currentTime = maxTime;
+        }
         if (Input.GetKeyDown("1") || Input.GetKeyDown("[1]"))
         {
             print("pressed 1");
@@ -87,20 +102,19 @@ public class EINmanager : MonoBehaviour
 
     private void getButton(int i)
     {
-        
+        currentTime = maxTime;
         getLine();
         getInts();
         
         if (currentOptions.Contains(i))
         {
+            totalCorrect++;
             wrongAnswers = 0;
             print("" + correctAnswers + " " + correctStreaks[correctAnswers]);
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
-                print("in loop");
                 //ship.GetComponent<ShipComponentManager>().RepairShip();
             }
-            print("Healing " + correctStreaks[correctAnswers] + " time(s)");
             if (correctAnswers >= 5)
             {
                 wrongStreaks[1] = 0;
@@ -113,6 +127,7 @@ public class EINmanager : MonoBehaviour
         }
         else
         {
+            totalWrong++;
             correctAnswers = 0;
             
             for (int j = 0; j < wrongStreaks[wrongAnswers]; ++j)
@@ -120,7 +135,6 @@ public class EINmanager : MonoBehaviour
                 
                 ship.GetComponent<ShipComponentManager>().HarmShip();
             }
-            print("Hurting " + wrongStreaks[wrongAnswers] + " time(s)");
             if (wrongStreaks[1] == 0)
             {
                 wrongStreaks[1] = 1;
@@ -132,10 +146,17 @@ public class EINmanager : MonoBehaviour
             wrongAnswers++;
         }
         updateDisplay();
+        print(getPercent());
     }
 
     private void updateDisplay()
     {
         displayText.text = currentLine;
+    }
+
+    //returns the % of correct answers
+    public float getPercent()
+    {
+        return (float)totalCorrect / (float)(totalCorrect + totalWrong);
     }
 }
