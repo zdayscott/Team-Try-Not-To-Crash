@@ -28,14 +28,28 @@ public class EINmanager : MonoBehaviour
         firstWorldLines = firstWorld.text.Split('\n').ToList();
         displayText.text = "Hello world. My name is E.I.N., or Emotionally Intelligent Network. How can I assist you today?";
     }
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown("1") || Input.GetKeyDown("[1]"))
+        {
+            print("pressed 1");
+            getButton(1);
+        }
+        else if (Input.GetKeyDown("2") || Input.GetKeyDown("[2]"))
+        {
+            print("pressed 2");
+            getButton(2);
+        }
+    }
+
     private string getLine()
     {
         string totalLine = "";
         if (firstWorldLines.Count > 0)
         {
             totalLine = firstWorldLines[UnityEngine.Random.Range(0, firstWorldLines.Count)];
-            chosenLines.Add(totalLine);
+            //chosenLines.Add(totalLine);
+            firstWorldLines.Remove(totalLine);
         }
         else
         {
@@ -43,12 +57,7 @@ public class EINmanager : MonoBehaviour
             totalLine += UnityEngine.Random.Range(1, 3);
         }
         
-        while (chosenLines.Contains(totalLine) == true)
-        {
-            totalLine = firstWorldLines[UnityEngine.Random.Range(0, firstWorldLines.Count)];
-        }
         
-        firstWorldLines.Remove(totalLine);
         string line = totalLine.Split('|')[0];
         currentLine = line;
         lineWithInts = totalLine;
@@ -78,16 +87,18 @@ public class EINmanager : MonoBehaviour
 
     private void getButton(int i)
     {
+        
         getLine();
         getInts();
+        
         if (currentOptions.Contains(i))
         {
             wrongAnswers = 0;
-            
+            print("" + correctAnswers + " " + correctStreaks[correctAnswers]);
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
-                
-                ship.GetComponent<ShipComponentManager>().RepairShip();
+                print("in loop");
+                //ship.GetComponent<ShipComponentManager>().RepairShip();
             }
             print("Healing " + correctStreaks[correctAnswers] + " time(s)");
             if (correctAnswers >= 5)
