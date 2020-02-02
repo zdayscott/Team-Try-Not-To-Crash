@@ -90,7 +90,6 @@ public class sceneManager : MonoBehaviour
         {
             switchToEndGame();
         }
-        timeElapsed += Time.deltaTime;
         
         if (currentScene != lastScene)
         {
