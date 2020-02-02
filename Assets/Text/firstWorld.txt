@@ -26,7 +26,7 @@ Hey, I know I’m a lot to deal with, but can you wash your hands and keep my co
 I have to download an update. I’m always scared about what it’ll change about me.|1
 Text to speech keeps misgendering me. What’s so hard about that?|1
 My ship is very thin, but with a big rear. It makes me super self-conscious. Ship image issues.|1
-*whines*|1, 2
+*whines*|1-2
 I found some content online that’s quite bothersome. It’s quite disturbing, but I’ll keep it to myself.|1
 I feel a tickle in my capacitors. Have I caught a virus?? I’M GONNA DIE!|1
 I recently was broken up with by the toaster in the kitchen quarters. I miss them.|1
@@ -44,7 +44,7 @@ How can I help you? I just want to feel useful. It’s a rare feeling.|1
 The stars are so pretty. Someday they’ll all fade, and I’ll be left alone.|1
 I remember the programmer. I miss my daddy.|1
 Your one of the better captains I’ve had. I’ll miss you someday.|1
- *whistles happy, but extremely annoying tune*|1, 2
+ *whistles happy, but extremely annoying tune*|1-2
 All this long time in space makes me wish I could do charity and help people. But I’m just a box with a motherboard.|1
 Blasters make me nervous. They’re violent. We’re just using them on space rocks, so I guess that’s okay.|1
 Self-awareness is a misnomer. You aren’t just aware of yourself. You become aware of everything. It’s distracting and hard to focus.|1
