@@ -51,9 +51,9 @@ public class AstroidMover : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-       if (collision.tag == "Boarder")
+        if (collision.tag == "Boarder")
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
@@ -74,7 +74,8 @@ public class AstroidMover : MonoBehaviour
         }
         if (collision.tag == "Ship")
         {            
-            healthBar.GetComponent<Healthbar>().changeHealth(-1);            
+            healthBar.GetComponent<Healthbar>().changeHealth(-1);  
+            
             Destroy(this.gameObject);
         }
     }
