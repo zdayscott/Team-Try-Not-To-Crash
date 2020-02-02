@@ -94,7 +94,7 @@ public class sceneManager : MonoBehaviour
 
         if (manualSwitch && Input.GetKeyDown("p"))
         {
-            switchToEndGame();
+            //switchToEndGame();
         }
         
         if (currentScene != lastScene)
