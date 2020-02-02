@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AstroidMover : MonoBehaviour
 {
     private GameObject rock;
+    private GameObject healthBar;
     private float xInitForce = 1f;
     private float yInitForce = 1f;
     private float maxRotation;
@@ -15,6 +17,7 @@ public class AstroidMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar = GameObject.Find("Health");
         rock = this.gameObject;
         rb = rock.GetComponent<Rigidbody2D>();
         maxRotation = 25f;
@@ -70,7 +73,8 @@ public class AstroidMover : MonoBehaviour
             }
         }
         if (collision.tag == "Ship")
-        {
+        {            
+            healthBar.GetComponent<Healthbar>().changeHealth(-1);            
             Destroy(this.gameObject);
         }
     }

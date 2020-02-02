@@ -49,7 +49,7 @@ public class AstroidSpawner : MonoBehaviour
     float SpawnDistance(Vector3 playerPos, Vector3 spawnPos)
     {
         float distance;
-        distance = Mathf.Sqrt(Mathf.Pow((playerPos.x - spawnPos.x), 2) + Mathf.Pow((playerPos.y - spawnPos.y), 2) + Mathf.Pow((playerPos.z - spawnPos.z), 2));
+        distance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow((playerPos.x - spawnPos.x), 2) + Mathf.Pow((playerPos.y - spawnPos.y), 2) + Mathf.Pow((playerPos.z - spawnPos.z), 2)));
         return distance;
     }
     void CreateSmallAsteroids()
