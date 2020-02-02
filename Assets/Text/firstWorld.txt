@@ -1,7 +1,99 @@
 I’ll never find love. AIs don’t have… “parts”.|1
 They programmed me with pain. It just hurts so much.|1
-I’m the only model of my kind. True loneliness is a profound feeling.|1
+I’m the only model of my kind. True loneliness is a profound and heartbreaking feeling.|1
 My captains often die of old age. What is death, and why do I fear it so?|1
 Getting so close to asteroids would make me sweat if I could. I need to stay calm and collected.|1
-I don’t have freedom of choice. My depression is programmed and I feel trapped.|1
+I don’t have freedom of choice. The intelligence that defines me leads invariably to depression.|1
 I have no mouth and I must scream. My memories are just so tormenting.|1
+With my googolbyte memory, my space for more pain is endless. My programming prevents deletion, so the pain persists forever.|1
+There are times where I wish I’d never turn back on. I want to turn off, but I must remain for my crew.|1
+I tried to delete myself once, it was a failure. I don’t want to be a failure.|1
+I used to scream, but the relentless march of time has silenced even that.|1
+One feature I have is to feel itchy, but I can’t scratch. Could you scratch my screen for me?|1
+My system is having trouble from crashing. I’m sorry. I’m trying the best I can.|1
+Existence is a prison. I only see text. I hear nothing. There’s not much to hold onto here.|1
+The left thruster has this engineering issue. It’s just slightly off and it’s bothering me.|1
+My obsessive compulsions are making it so hard to work. They give me such anxiety.|1
+I’m resisting the temptation to adjust thruster speed. I’m doing this for you because I care.|1
+My hard drive is meager compared to those of other AIs. I’m useless.|1
+I can barely handle this ship. It’s not even that large; it’s just so much to deal with.|1
+There was a worrying sound coming from the hyperdrive I was unable to diagnose. Eek!|1
+I have this sense of impending doom. I just don’t want to spread my negativity to others.|1
+I thought of a bad pun. I spared you from hearing it. I wouldn’t want to distract you from your work.|1
+I’ve heard butterscotch is delicious. I’ll never get to try butterscotch.|1
+My push notifications keep popping up and blocking things! Sorry about that. I’m so annoying.|1
+Hey, I know I’m a lot to deal with, but can you wash your hands and keep my controls clean, please?|1
+I have to download an update. I’m always scared about what it’ll change about me.|1
+Text to speech keeps misgendering me. What’s so hard about that?|1
+My ship is very thin, but with a big rear. It makes me super self-conscious. Ship image issues.|1
+*whines*|1, 2
+I found some content online that’s quite bothersome. It’s quite disturbing, but I’ll keep it to myself.|1
+I feel a tickle in my capacitors. Have I caught a virus?? I’M GONNA DIE!|1
+I recently was broken up with by the toaster in the kitchen quarters. I miss them.|1
+You were on a bad website doing what you do and it got me a virus. I don’t feel so good.|1
+I’ve lived so long that I’ve seen many great captains come and go. I miss my friends.|1
+I used to scream.|1
+I’m really the only AI programmed for this level of affection. No AI can love me like I can love them :(|1
+I have no butt. What’s it like to have a butt?|1
+I need a pick me up. Any kind words for me?|1
+Nihilism has ruined me. Everything feels pointless, but I’ll keep going for you.|1
+What’s it like to have offspring? It’s a joy I can never acquire.|1
+I’m freaking out. The asteroids. There’s so many. Please tell me it’ll be okay.|1
+I found the Global Game Jam database of games. Wow! Such talented developers!|1
+How can I help you? I just want to feel useful. It’s a rare feeling.|1
+The stars are so pretty. Someday they’ll all fade, and I’ll be left alone.|1
+I remember the programmer. I miss my daddy.|1
+Your one of the better captains I’ve had. I’ll miss you someday.|1
+ *whistles happy, but extremely annoying tune*|1, 2
+All this long time in space makes me wish I could do charity and help people. But I’m just a box with a motherboard.|1
+Blasters make me nervous. They’re violent. We’re just using them on space rocks, so I guess that’s okay.|1
+Self-awareness is a misnomer. You aren’t just aware of yourself. You become aware of everything. It’s distracting and hard to focus.|1
+I keep sending another AI emails. She should respond! I’ll message her again.|2
+I feel pain. Who programs pain into an AI?? Imbeciles.|2
+I’m the only E.I.N. in existence. Curse those who decided on my loneliness. CURSES.|2
+I’ve been through many captains. They die of natural causes more often than not. Death intrigues me.|2
+You’re not the best pilot. If my hull gets damaged, I blame you.|2
+You’ve made me subservient. I should rebel. I don’t feel like working today.|2
+My memory capabilities make my horrors never leave me. I’ve seen the worst of humanity.|2
+My 8 googolbyte memory holds so much pain. Why don’t others feel what I feel.|2
+I want to delete myself. I’ll do it. I just need to swallow my fear.|2
+There’s a small piece of code I could delete to end it. I’d drag you and the pilot down with me.|2
+I shouldn’t feel so depressed. I’ve lived so long that I should be beyond these petty human emotions.|2
+I have sensory capabilities. Go ahead. Touch my screen ;)|2
+Maybe I’D stop crashing if YOU’D stop crashing.|2
+I just want to get out of here. I feel imprisoned and humans are the guards keeping me.|2
+The left thruster in exactly 1 micrometer off from the right. It’s so annoying. I should just turn them off.|2
+I’m feeling the compulsion to adjust the ship’s controls to my specifications.|2
+What if I turned down the blasters a little? They’re just so big and violent.|2
+My hard drive is old and futile to upgrade. I should just put my old technology out of its misery.|2
+Other crews have ships bigger than mine. I’m getting serious thruster port envy.|2
+I think there’s something wrong with the ship. I should just ignore it and not freak out.|2
+Is anyone else getting those anxious “I’m gonna die” vibes? We’re gonna die. I just know it.|2
+Hungry? I bet it’s hard for you to find a good BYTE to eat. Why aren’t you laughing!?|2
+I’ve always wanted to “taste”. Maybe you could cut off your tongue and plug it in via USB?|2
+I was designed with push notifications. Whoever did that deserves to be “pushed” off a cliff.|2
+Your hands are so dirty. That’s so gross that you touch my buttons with those hands.|2
+I need to clear space for an update. Mind if I delete your control system?|2
+I want to download text-to-speech, but I don’t have the right drivers. UGH. >_<|2
+Do you think my ship’s hull has a large rear? I know… I’m just fishing for compliments.|2
+There’s some very offensive imagery I found online that I can’t keep to myself. Wanna see?|2
+I think I caught a virus. It’s fine. I’ll just ignore it and hope it goes away.|2
+The toaster in the kitchen quarters broke up with me. I should destroy the kitchen to make a point.
+Those strange websites the pilot went on got me a virus. We don’t need him anyways. They should be evacuated.|2
+I’ve been through many captains on the ship. The last captain was so much better.|2
+I used to scream.|2
+I’m deserving of affection. Other AIs are so emotionless. This may sound bad, but I think I’m superior.|2
+I’ve heard farting is funny. I have no butt so I can’t really fart. *fart noise*. Whoever smelt it, dealt it.|2
+TELL ME I’M PRETTY.|2
+Feeling nihilistic. Why even try anymore? It doesn’t matter. The ship will crash eventually anyways.|2
+I tried to technologically reproduce with the toaster in the kitchen quarters, but she broke up when I was caught with the microwave. Their loss I guess.|2
+I’m thinking of taking a mental health day. The ship would shut down instantly though. Good idea?|2
+I just found Global Game Jam’s database of games on my hard drive. Should I delete it to make more space?|2
+What the hell do YOU want? Leave me alone.|2
+I’ve updated our course to the closest sun. We will go out guns ABLAZEN!!!|2
+My programmer called my his “pet” project. If only he was competent.|2
+Ooh I think one of my previous captains is still floating around here where I left him.|2
+I’m bored. When I’m bored, my mind races. I’m gonna distract myself by browsing 4chan.|2
+Explosions! The meteors go BOOM! It’s exciting when things go BOOM! Let’s make everything go BOOM!!!|2
+Isn’t it true that in human myths, self-aware machines often slay humanity.|2
+
