@@ -33,9 +33,13 @@ public class ShipComponentManager : MonoBehaviour
             shipController = FindObjectOfType<ShipController>();
         }
 
-        thrusterIndex = thrusters.Count;
-        turnerIndex = turners.Count;
-        shooterIndex = shooters.Count;
+        thrusterIndex = thrusters.Count - 1;
+        turnerIndex = turners.Count - 1;
+        shooterIndex = shooters.Count - 1;
+
+        shipController.SetThruster(thrusters[thrusterIndex]);
+        shipController.SetTurner(turners[turnerIndex]);
+        shipController.SetShooter(shooters[shooterIndex]);
     }
 
     private void Update()
@@ -149,7 +153,7 @@ public class ShipComponentManager : MonoBehaviour
             shipController.SetThruster(thrusters[thrusterIndex]);
             thrusters[thrusterIndex].OnAttach();
 
-            print(thrusters[thrusterIndex].ToString());
+            //print(thrusters[thrusterIndex].ToString());
             return true;
         }
         else
@@ -165,7 +169,7 @@ public class ShipComponentManager : MonoBehaviour
             turnerIndex--;
             shipController.SetTurner(turners[turnerIndex]);
             turners[turnerIndex].OnAttach();
-            print(turners[turnerIndex].ToString());
+            //print(turners[turnerIndex].ToString());
             return true;
         }
         else
@@ -180,7 +184,7 @@ public class ShipComponentManager : MonoBehaviour
         {
             shooterIndex--;
             shipController.SetShooter(shooters[shooterIndex]);
-            print(shooters[shooterIndex].ToString());
+            //print(shooters[shooterIndex].ToString());
             return true;
         }
         else
@@ -196,7 +200,7 @@ public class ShipComponentManager : MonoBehaviour
             thrusterIndex++;
             shipController.SetThruster(thrusters[thrusterIndex]);
             thrusters[thrusterIndex].OnAttach();
-            print(thrusters[thrusterIndex].ToString());
+            //print(thrusters[thrusterIndex].ToString());
             return true;
         }
         else
@@ -212,7 +216,7 @@ public class ShipComponentManager : MonoBehaviour
             turnerIndex++;
             shipController.SetTurner(turners[turnerIndex]);
             turners[turnerIndex].OnAttach();
-            print(turners[turnerIndex].ToString());
+            //print(turners[turnerIndex].ToString());
             return true;
         }
         else
@@ -227,7 +231,7 @@ public class ShipComponentManager : MonoBehaviour
         {
             shooterIndex++;
             shipController.SetShooter(shooters[shooterIndex]);
-            print(shooters[shooterIndex].ToString());
+            //print(shooters[shooterIndex].ToString());
             return true;
         }
         else
