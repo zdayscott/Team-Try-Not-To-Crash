@@ -18,7 +18,7 @@ public class EasyThruster : MonoBehaviour, IThruster
                 m *= 0.75f;
             }
 
-            rb.AddForce(this.gameObject.transform.up * acceleration * m);
+            rb.AddForce(rb.gameObject.transform.up * acceleration * m);
         }
     }
 

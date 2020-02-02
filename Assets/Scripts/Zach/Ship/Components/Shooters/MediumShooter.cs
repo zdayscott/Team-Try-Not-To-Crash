@@ -11,7 +11,10 @@ public class MediumShooter : MonoBehaviour, IShooter
     {
         for (int i = 0; i < shootpoints.Length; i++)
         {
-            Instantiate(projectile, shootpoints[i]);
+            Vector3 pos = shootpoints[i].position;
+            Quaternion rot = shootpoints[i].rotation;
+
+            Instantiate(projectile, pos, rot);
         }
     }
 }
