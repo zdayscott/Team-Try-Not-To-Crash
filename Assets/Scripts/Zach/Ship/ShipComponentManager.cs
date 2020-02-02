@@ -16,6 +16,16 @@ public class ShipComponentManager : MonoBehaviour
     private int shooterIndex;
 
     private ShipController shipController;
+    public AudioClip eindamage1;
+    public AudioClip eindamage2;
+    public AudioClip eindamage3;
+    public AudioClip eindamage4;
+    public AudioClip einRepair1;
+    public AudioClip einRepair2;
+    public AudioClip einRepair3;
+    public AudioClip einRepair4;
+
+
 
 
     // Start is called before the first frame update
@@ -58,8 +68,9 @@ public class ShipComponentManager : MonoBehaviour
     public void HarmShip()
     {
         int seed = Random.Range(0, 2);
+        SoundManager.instance.PlayRandomSfx(eindamage1, eindamage2, eindamage3, eindamage4);
 
-        switch(seed)
+        switch (seed)
         {
             case 0:
                 if(!DamageThrusters())
@@ -103,6 +114,7 @@ public class ShipComponentManager : MonoBehaviour
     public void RepairShip()
     {
         int seed = Random.Range(0, 2);
+        SoundManager.instance.PlayRandomSfx(einRepair1, einRepair2, einRepair3, einRepair4);
 
         switch (seed)
         {

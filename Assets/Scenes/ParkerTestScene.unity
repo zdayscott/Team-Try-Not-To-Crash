@@ -746,6 +746,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1654464752}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: damage1
+      value: 
+      objectReference: {fileID: 8300000, guid: 849f2afa394b54b28b329094ca1a8949, type: 3}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: damage2
+      value: 
+      objectReference: {fileID: 8300000, guid: c272dcb1cc49c4c34b2e53e39adf3e37, type: 3}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: damage3
+      value: 
+      objectReference: {fileID: 8300000, guid: f993b68394b7e414aa5ed18fae462b99, type: 3}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: damage4
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c8f59b22a5b44525bcd538d2e322e85, type: 3}
     - target: {fileID: 6272612573093760843, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
       propertyPath: shootpoints.Array.data[0]
@@ -870,12 +890,22 @@ PrefabInstance:
     - target: {fileID: 51938683110480257, guid: 33779dae95d0b4a6fad4ade984771053,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 51938683110480257, guid: 33779dae95d0b4a6fad4ade984771053,
+        type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 601477861796861488, guid: 33779dae95d0b4a6fad4ade984771053,
         type: 3}
       propertyPath: m_Volume
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601477861796861488, guid: 33779dae95d0b4a6fad4ade984771053,
+        type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 924204539510949840, guid: 33779dae95d0b4a6fad4ade984771053,
         type: 3}
@@ -962,10 +992,20 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6530211210606328866, guid: 33779dae95d0b4a6fad4ade984771053,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7355338045957118952, guid: 33779dae95d0b4a6fad4ade984771053,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355338045957118952, guid: 33779dae95d0b4a6fad4ade984771053,
+        type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33779dae95d0b4a6fad4ade984771053, type: 3}

@@ -51,7 +51,7 @@ public class SoundManager : MonoBehaviour
 
     public static IEnumerator EinFadeIn (AudioSource fadeInSource, AudioSource fadeOutSourceOne, AudioSource fadeOutSourceTwo, float fadeTimer)
     {
-        fadeInSource.Play();
+
         fadeInSource.volume = 0f;
         float startVolumeOne = fadeOutSourceOne.volume;
         float startVolumeTwo = fadeOutSourceTwo.volume;
@@ -71,6 +71,24 @@ public class SoundManager : MonoBehaviour
             fadeOutSourceTwo.volume -= startVolumeTwo * Time.deltaTime / fadeTimer;
             yield return null;
         }
+    }
+    public void EinIsHappySfx()
+    {
+
+        StartCoroutine(EinFadeIn(einHappySource, einGettingSadSource, einDepressedSource, 1.0f));
+
+    }
+    public void EinIsSadSfx()
+    {
+
+        StartCoroutine(EinFadeIn(einGettingSadSource, einHappySource, einDepressedSource, 1.0f));
+
+    }
+    public void EinIsDepressedSfx()
+    {
+
+        StartCoroutine(EinFadeIn(einDepressedSource, einGettingSadSource, einHappySource, 1.0f));
+
     }
 
 
