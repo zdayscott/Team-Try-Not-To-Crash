@@ -26,8 +26,8 @@ public class EINmanager : MonoBehaviour
     private int correctAnswers = 0;
     private int totalCorrect = 0;
     private int totalWrong = 0;
-    private int[] correctStreaks = { 1, 1, 2, 4, 5, 5, 5 };
-    private int[] wrongStreaks = { 0, 1, 2, 4, 4, 4, 4, 4, 4 };
+    private int[] correctStreaks = { 1, 1, 1, 2, 2, 2, 2 };
+    private int[] wrongStreaks = { 0, 1, 1, 1, 1, 1, 1, 1, 1 };
 
     [SerializeField]
     private GameObject happyBoi;
@@ -88,7 +88,6 @@ public class EINmanager : MonoBehaviour
 
     private void getInts()
     {
-        print(lineWithInts);
         string line = lineWithInts.Split('|')[1];
         List<string> intStrings = line.Split('-').ToList();
         currentOptions = new List<int>();
@@ -118,7 +117,6 @@ public class EINmanager : MonoBehaviour
         {
             totalCorrect++;
             wrongAnswers = 0;
-            //print("" + correctAnswers + " " + correctStreaks[correctAnswers]);
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
                 ship.GetComponent<ShipComponentManager>().RepairShip();
