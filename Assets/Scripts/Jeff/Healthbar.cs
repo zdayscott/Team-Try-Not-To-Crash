@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour
@@ -8,19 +6,19 @@ public class Healthbar : MonoBehaviour
     private GameObject textBox;
     public Text healthBar;
     public float currentHealth;
+
+    [SerializeField]
+    private Slider slider;
     
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = GetComponent<Text>();
+        if(!healthBar)
+        {
+            healthBar = GetComponent<Text>();
+        }
+
         currentHealth = 4;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void changeHealth(int change)
@@ -39,31 +37,33 @@ public class Healthbar : MonoBehaviour
             //comments kill game.
             healthBar.text = "An Overwhelming Surplus of Diggity";
             print("An Overwhelming Surplus of Diggity");
-            SoundManager.instance.EinIsHappySfx();
+            //SoundManager.instance.EinIsHappySfx();
 
         }
         else if (currentHealth == 3)
         {
             healthBar.text = "A Fair Amount of Diggity";
             print("A Fair Amount of Diggity");
-            SoundManager.instance.EinIsSadSfx();
+            //SoundManager.instance.EinIsSadSfx();
         }
         else if (currentHealth == 2)
         {
             healthBar.text = "Hardly Any Diggity";
             print("Hardly Any Diggity");
-            SoundManager.instance.EinIsSadSfx();
+            //SoundManager.instance.EinIsSadSfx();
         }
         else if (currentHealth == 1)
         {
             healthBar.text = "No Diggity";
             print("No Diggity");
-            SoundManager.instance.EinIsDepressedSfx();
+            //sSoundManager.instance.EinIsDepressedSfx();
         }
         else
         {
             death();
         }
+
+        slider.value = currentHealth/4;
     }
     public void death()
     {

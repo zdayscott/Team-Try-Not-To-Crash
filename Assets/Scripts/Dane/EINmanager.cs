@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
@@ -29,6 +28,16 @@ public class EINmanager : MonoBehaviour
     private int totalWrong = 0;
     private int[] correctStreaks = { 1, 1, 2, 4, 5, 5, 5 };
     private int[] wrongStreaks = { 0, 1, 2, 4, 4, 4, 4, 4, 4 };
+
+    [SerializeField]
+    private GameObject happyBoi;
+    [SerializeField]
+    private GameObject mehBoi;
+    [SerializeField]
+    private GameObject sadBoi;
+
+    private int happiness = 9;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -111,7 +120,11 @@ public class EINmanager : MonoBehaviour
             print("" + correctAnswers + " " + correctStreaks[correctAnswers]);
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
-                //ship.GetComponent<ShipComponentManager>().RepairShip();
+                ship.GetComponent<ShipComponentManager>().RepairShip();
+                if(happiness < 9)
+                {
+                    happiness++;
+                }
             }
             if (correctAnswers >= 5)
             {
@@ -130,8 +143,11 @@ public class EINmanager : MonoBehaviour
             
             for (int j = 0; j < wrongStreaks[wrongAnswers]; ++j)
             {
-                
                 ship.GetComponent<ShipComponentManager>().HarmShip();
+                if(happiness > 0)
+                {
+                    happiness--;
+                }
             }
             if (wrongStreaks[1] == 0)
             {
@@ -145,11 +161,35 @@ public class EINmanager : MonoBehaviour
         }
         updateDisplay();
         print(getPercent());
+
+        UpdateEINFace();
     }
 
     private void updateDisplay()
     {
         displayText.text = currentLine;
+    }
+
+    private void UpdateEINFace()
+    {
+        if(happiness > 5)
+        {
+            happyBoi.SetActive(true);
+            mehBoi.SetActive(false);
+            sadBoi.SetActive(false);
+        }
+        else if(happiness > 2)
+        {
+            happyBoi.SetActive(false);
+            mehBoi.SetActive(true);
+            sadBoi.SetActive(false);
+        }
+        else
+        {
+            happyBoi.SetActive(false);
+            mehBoi.SetActive(false);
+            sadBoi.SetActive(true);
+        }
     }
 
     //returns the % of correct answers
