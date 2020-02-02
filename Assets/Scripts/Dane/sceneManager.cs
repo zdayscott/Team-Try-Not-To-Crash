@@ -21,15 +21,16 @@ public class sceneManager : MonoBehaviour
 
     string lastScene;
 
-    public float percentCorrect = 0f;
-    public int asteroidsHit = 0;
-    public float timeSurvived = 0f;
+    public float percentCorrect = .2f;
+    public int asteroidsHit = 13;
+    public float timeSurvived = 15.6f;
 
     private Button playGame;
     private Button credits;
     private Button quitButton;
     private Button returnToTitle;
     private Button help;
+    private Text finalDisplayText;
 
     private void Awake()
     {
@@ -71,6 +72,11 @@ public class sceneManager : MonoBehaviour
         {
             help = GameObject.Find("help").GetComponent<Button>();
             help.onClick.AddListener(switchToHelpScene);
+        }
+        if (GameObject.Find("finalDisplayText") != null)
+        {
+            finalDisplayText = GameObject.Find("finalDisplayText").GetComponent<Text>();
+            finalDisplayText.text = endScreenString();
         }
     }
     private void Start()
@@ -149,5 +155,18 @@ public class sceneManager : MonoBehaviour
         percentCorrect = correct;
         asteroidsHit = astHit;
         timeSurvived = timeS;
+    }
+
+    private string endScreenString()
+    {
+        string finalString = "";
+        finalString += "Percent correct with E.I.N. - " + (100f * percentCorrect) + "%\n";
+        finalString += "Asteroids hit - " + asteroidsHit + "\n";
+        finalString += "Time survived - " + timeSurvived + " seconds\n";
+        finalString += "-----------------------------\n";
+        finalString += "TOTAL SCORE - " + ((10f * timeSurvived + (float)asteroidsHit) * (1f + percentCorrect));
+
+
+        return finalString;
     }
 }
