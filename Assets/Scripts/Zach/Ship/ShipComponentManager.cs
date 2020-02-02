@@ -153,7 +153,7 @@ public class ShipComponentManager : MonoBehaviour
             shipController.SetThruster(thrusters[thrusterIndex]);
             thrusters[thrusterIndex].OnAttach();
 
-            print(thrusters[thrusterIndex].ToString());
+            //print(thrusters[thrusterIndex].ToString());
             return true;
         }
         else
@@ -169,7 +169,7 @@ public class ShipComponentManager : MonoBehaviour
             turnerIndex--;
             shipController.SetTurner(turners[turnerIndex]);
             turners[turnerIndex].OnAttach();
-            print(turners[turnerIndex].ToString());
+            //print(turners[turnerIndex].ToString());
             return true;
         }
         else
@@ -184,7 +184,7 @@ public class ShipComponentManager : MonoBehaviour
         {
             shooterIndex--;
             shipController.SetShooter(shooters[shooterIndex]);
-            print(shooters[shooterIndex].ToString());
+            //print(shooters[shooterIndex].ToString());
             return true;
         }
         else
@@ -200,7 +200,7 @@ public class ShipComponentManager : MonoBehaviour
             thrusterIndex++;
             shipController.SetThruster(thrusters[thrusterIndex]);
             thrusters[thrusterIndex].OnAttach();
-            print(thrusters[thrusterIndex].ToString());
+            //print(thrusters[thrusterIndex].ToString());
             return true;
         }
         else
@@ -216,7 +216,7 @@ public class ShipComponentManager : MonoBehaviour
             turnerIndex++;
             shipController.SetTurner(turners[turnerIndex]);
             turners[turnerIndex].OnAttach();
-            print(turners[turnerIndex].ToString());
+            //print(turners[turnerIndex].ToString());
             return true;
         }
         else
@@ -231,7 +231,7 @@ public class ShipComponentManager : MonoBehaviour
         {
             shooterIndex++;
             shipController.SetShooter(shooters[shooterIndex]);
-            print(shooters[shooterIndex].ToString());
+            //print(shooters[shooterIndex].ToString());
             return true;
         }
         else
