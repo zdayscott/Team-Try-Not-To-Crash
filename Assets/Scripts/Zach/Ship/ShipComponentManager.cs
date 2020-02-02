@@ -71,7 +71,7 @@ public class ShipComponentManager : MonoBehaviour
 
         if(eindamage1 && eindamage2 && eindamage3 && eindamage4)
         {
-            SoundManager.instance.PlayRandomSfx(eindamage1, eindamage2, eindamage3, eindamage4);
+            SoundManager.instance.PlayEinRandomSfx(eindamage1, eindamage2, eindamage3, eindamage4);
         }
 
         switch (seed)

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BulletShooter : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -12,6 +14,8 @@ public class BulletShooter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         Destroy(gameObject, 0.0f);
+      
     }
 }

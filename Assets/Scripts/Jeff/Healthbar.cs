@@ -37,14 +37,14 @@ public class Healthbar : MonoBehaviour
             //comments kill game.
             healthBar.text = "An Overwhelming Surplus of Diggity";
             print("An Overwhelming Surplus of Diggity");
-            //SoundManager.instance.EinIsHappySfx();
+            SoundManager.instance.EinIsHappySfx();
 
         }
         else if (currentHealth == 3)
         {
             healthBar.text = "A Fair Amount of Diggity";
             print("A Fair Amount of Diggity");
-            //SoundManager.instance.EinIsSadSfx();
+            SoundManager.instance.EinIsSadSfx();
         }
         else if (currentHealth == 2)
         {
@@ -56,7 +56,7 @@ public class Healthbar : MonoBehaviour
         {
             healthBar.text = "No Diggity";
             print("No Diggity");
-            //sSoundManager.instance.EinIsDepressedSfx();
+            SoundManager.instance.EinIsDepressedSfx();
         }
         else
         {

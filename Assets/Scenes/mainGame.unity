@@ -144,6 +144,41 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx1
+      value: 
+      objectReference: {fileID: 8300000, guid: e3c07c4bc64c74020b51bbb8457de538, type: 3}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx2
+      value: 
+      objectReference: {fileID: 8300000, guid: 270741ad861d14ce4976b8282f5e640a, type: 3}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx3
+      value: 
+      objectReference: {fileID: 8300000, guid: a7ef24afa8817410f822dc7703c52d98, type: 3}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx4
+      value: 
+      objectReference: {fileID: 8300000, guid: 849f2afa394b54b28b329094ca1a8949, type: 3}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx5
+      value: 
+      objectReference: {fileID: 8300000, guid: c272dcb1cc49c4c34b2e53e39adf3e37, type: 3}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx6
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c8f59b22a5b44525bcd538d2e322e85, type: 3}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: shootSfx7
+      value: 
+      objectReference: {fileID: 8300000, guid: f993b68394b7e414aa5ed18fae462b99, type: 3}
     - target: {fileID: 7897826641832828831, guid: 3f4b9c392173ac645b8b08f7e271d073,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1226,6 +1261,26 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 3.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: eindamage1
+      value: 
+      objectReference: {fileID: 8300000, guid: c7a034d27e5ff426683b5cd94de9c3c9, type: 3}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: eindamage2
+      value: 
+      objectReference: {fileID: 8300000, guid: a48a839c942744b7e8da389c5f0c34fa, type: 3}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: eindamage3
+      value: 
+      objectReference: {fileID: 8300000, guid: 5541d0a95cd204856a15905d78e3e2ed, type: 3}
+    - target: {fileID: 6272612573076560967, guid: acf9298546f52134f82330ac510e63e8,
+        type: 3}
+      propertyPath: eindamage4
+      value: 
+      objectReference: {fileID: 8300000, guid: d2c0fe0749fee42989854eb3d9825043, type: 3}
     - target: {fileID: 6272612573093760843, guid: acf9298546f52134f82330ac510e63e8,
         type: 3}
       propertyPath: shootpoints.Array.data[0]

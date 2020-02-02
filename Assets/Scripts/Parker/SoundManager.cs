@@ -50,6 +50,18 @@ public class SoundManager : MonoBehaviour
 
 
     }
+    public void PlayEinRandomSfx(params AudioClip[] clips)
+    {
+        int randomIndex = Random.Range(0, clips.Length);
+        float randoPitch = Random.Range(lowPitchRando, highPitchRando);
+
+        einSfxSource.pitch = randoPitch;
+        einSfxSource.clip = clips[randomIndex];
+        einSfxSource.Play();
+
+
+
+    }
 
     public static IEnumerator EinFadeIn (AudioSource fadeInSource, AudioSource fadeOutSourceOne, AudioSource fadeOutSourceTwo, float fadeTimer)
     {
@@ -102,31 +114,31 @@ public class SoundManager : MonoBehaviour
     public void EinIsDead()
     {
 
-        StartCoroutine(EinFadeOut(einHappySource, einGettingSadSource, einDepressedSource, 1.0f));
+        StartCoroutine(EinFadeOut(einHappySource, einGettingSadSource, einDepressedSource, 0.2f));
 
     }
     public void EinIsHappySfx()
     {
 
-        StartCoroutine(EinFadeIn(einHappySource, einGettingSadSource, einDepressedSource, 1.0f));
+        StartCoroutine(EinFadeIn(einHappySource, einGettingSadSource, einDepressedSource, 0.2f));
 
     }
     public void EinIsSadSfx()
     {
 
-        StartCoroutine(EinFadeIn(einGettingSadSource, einHappySource, einDepressedSource, 1.0f));
+        StartCoroutine(EinFadeIn(einGettingSadSource, einHappySource, einDepressedSource, 0.2f));
 
     }
     public void EinIsDepressedSfx()
     {
 
-        StartCoroutine(EinFadeIn(einDepressedSource, einGettingSadSource, einHappySource, 1.0f));
+        StartCoroutine(EinFadeIn(einDepressedSource, einGettingSadSource, einHappySource, 0.2f));
 
     }
 
     public static IEnumerator MusicFadeIn (AudioSource MusicSource, float musicfader)
     {
-       MusicSource.volume = 0f;
+       
 
         while (MusicSource.volume < 1)
         {
@@ -138,8 +150,9 @@ public class SoundManager : MonoBehaviour
     }
     public void MusicStart()
     {
+       
 
-        StartCoroutine(MusicFadeIn(menuMusic, 1.0f));
+        StartCoroutine(MusicFadeIn(menuMusic, 0.2f));
 
     }
     public static IEnumerator MusicFadeOut(AudioSource MusicSource, float fader)

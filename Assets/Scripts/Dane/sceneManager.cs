@@ -126,6 +126,9 @@ public class sceneManager : MonoBehaviour
     public void switchToEndGame()
     {
         SceneManager.LoadScene(endScene);
+        SoundManager.instance.EinIsDead();
+        SoundManager.instance.EinPulseStop();
+        SoundManager.instance.MusicStart();
         buttonAssigner();
 
     }
