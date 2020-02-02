@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AstroidSpawner : MonoBehaviour
 {
-    public int chance;
+    //public int chance;
     public GameObject rock;
     private Rigidbody2D rb;
     private Vector3 playerPos;

@@ -61,6 +61,7 @@ public class AstroidMover : MonoBehaviour
         {
             if (this.transform.localScale.x <= 1)
             {
+                Destroy(collision.gameObject);
                 Destroy(this.gameObject);
             }
             else
