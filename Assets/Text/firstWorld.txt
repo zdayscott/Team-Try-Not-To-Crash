@@ -78,7 +78,7 @@ I want to download text-to-speech, but I don’t have the right drivers. UGH. >_
 Do you think my ship’s hull has a large rear? I know… I’m just fishing for compliments.|2
 There’s some very offensive imagery I found online that I can’t keep to myself. Wanna see?|2
 I think I caught a virus. It’s fine. I’ll just ignore it and hope it goes away.|2
-The toaster in the kitchen quarters broke up with me. I should destroy the kitchen to make a point.
+The toaster in the kitchen quarters broke up with me. I should destroy the kitchen to make a point.|2
 Those strange websites the pilot went on got me a virus. We don’t need him anyways. They should be evacuated.|2
 I’ve been through many captains on the ship. The last captain was so much better.|2
 I used to scream.|2
@@ -96,4 +96,3 @@ Ooh I think one of my previous captains is still floating around here where I le
 I’m bored. When I’m bored, my mind races. I’m gonna distract myself by browsing 4chan.|2
 Explosions! The meteors go BOOM! It’s exciting when things go BOOM! Let’s make everything go BOOM!!!|2
 Isn’t it true that in human myths, self-aware machines often slay humanity.|2
-

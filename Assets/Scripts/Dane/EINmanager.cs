@@ -88,6 +88,7 @@ public class EINmanager : MonoBehaviour
 
     private void getInts()
     {
+        print(lineWithInts);
         string line = lineWithInts.Split('|')[1];
         List<string> intStrings = line.Split('-').ToList();
         currentOptions = new List<int>();
@@ -117,7 +118,7 @@ public class EINmanager : MonoBehaviour
         {
             totalCorrect++;
             wrongAnswers = 0;
-            print("" + correctAnswers + " " + correctStreaks[correctAnswers]);
+            //print("" + correctAnswers + " " + correctStreaks[correctAnswers]);
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
                 ship.GetComponent<ShipComponentManager>().RepairShip();
@@ -160,7 +161,6 @@ public class EINmanager : MonoBehaviour
             wrongAnswers++;
         }
         updateDisplay();
-        print(getPercent());
 
         UpdateEINFace();
     }
