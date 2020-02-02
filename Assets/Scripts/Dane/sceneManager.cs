@@ -19,6 +19,8 @@ public class sceneManager : MonoBehaviour
     string endScene = "endGame";
     string helpScene = "helpScene";
 
+    string lastScene;
+
     public float percentCorrect = 0f;
     public int asteroidsHit = 0;
     public float timeSurvived = 0f;
@@ -28,8 +30,6 @@ public class sceneManager : MonoBehaviour
     private Button quitButton;
     private Button returnToTitle;
     private Button help;
-
-    private float timeElapsed = 0;
 
     private void Awake()
     {
@@ -42,6 +42,7 @@ public class sceneManager : MonoBehaviour
             _instance = this;
         }
         currentScene = SceneManager.GetActiveScene().name;
+        lastScene = currentScene;
         DontDestroyOnLoad(this.gameObject);
     }
     private void buttonAssigner()
@@ -79,6 +80,7 @@ public class sceneManager : MonoBehaviour
 
     private void Update()
     {
+        currentScene = SceneManager.GetActiveScene().name;
         if (Input.GetKeyDown("escape") && currentScene == creditsScene)
         {
             switchToTitleScene();
@@ -89,11 +91,12 @@ public class sceneManager : MonoBehaviour
             switchToEndGame();
         }
         timeElapsed += Time.deltaTime;
-        if (timeElapsed >= 1f)
+        
+        if (currentScene != lastScene)
         {
             buttonAssigner();
-            timeElapsed = 0f;
         }
+        lastScene = currentScene;
     }
     public void switchToHelpScene()
     {
