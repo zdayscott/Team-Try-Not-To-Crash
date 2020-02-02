@@ -17,6 +17,7 @@ public class sceneManager : MonoBehaviour
     string titleScene = "titleScreen";
     string mainGame = "mainGame";
     string endScene = "endGame";
+    string helpScene = "helpScene";
 
     public float percentCorrect = 0f;
     public int asteroidsHit = 0;
@@ -26,6 +27,7 @@ public class sceneManager : MonoBehaviour
     private Button credits;
     private Button quitButton;
     private Button returnToTitle;
+    private Button help;
 
     private float timeElapsed = 0;
 
@@ -46,27 +48,28 @@ public class sceneManager : MonoBehaviour
     {
         if (GameObject.Find("playGame") != null)
         {
-            print("found play game");
             playGame = GameObject.Find("playGame").GetComponent<Button>();
             playGame.onClick.AddListener(switchToGame);
         }
         if (GameObject.Find("credits") != null)
         {
-            print("found credits");
             credits = GameObject.Find("credits").GetComponent<Button>();
             credits.onClick.AddListener(switchToCredits);
         }
         if (GameObject.Find("quitGame") != null)
         {
-            print("quit game found");
             quitButton = GameObject.Find("quitGame").GetComponent<Button>();
             quitButton.onClick.AddListener(quitGame);
         }
         if (GameObject.Find("returnToTitle") != null)
         {
-            print("return to title found");
             returnToTitle = GameObject.Find("returnToTitle").GetComponent<Button>();
             returnToTitle.onClick.AddListener(switchToTitleScene);
+        }
+        if (GameObject.Find("help") != null)
+        {
+            help = GameObject.Find("help").GetComponent<Button>();
+            help.onClick.AddListener(switchToHelpScene);
         }
     }
     private void Start()
@@ -92,6 +95,12 @@ public class sceneManager : MonoBehaviour
             timeElapsed = 0f;
         }
     }
+    public void switchToHelpScene()
+    {
+        SceneManager.LoadScene(helpScene);
+        buttonAssigner();
+    }
+
     public void switchToCredits()
     {
         SceneManager.LoadScene(creditsScene);
