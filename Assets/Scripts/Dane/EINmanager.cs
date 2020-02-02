@@ -47,12 +47,10 @@ public class EINmanager : MonoBehaviour
         }
         if (Input.GetKeyDown("1") || Input.GetKeyDown("[1]"))
         {
-            print("pressed 1");
             getButton(1);
         }
         else if (Input.GetKeyDown("2") || Input.GetKeyDown("[2]"))
         {
-            print("pressed 2");
             getButton(2);
         }
     }
