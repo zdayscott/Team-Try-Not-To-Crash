@@ -128,41 +128,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7897826641022123536, guid: 3f4b9c392173ac645b8b08f7e271d073,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: caff1726eb7cac746b916005d206179a,
-        type: 3}
-    - target: {fileID: 7897826641022123539, guid: 3f4b9c392173ac645b8b08f7e271d073,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.242
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897826641022123539, guid: 3f4b9c392173ac645b8b08f7e271d073,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.242
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897826641022123539, guid: 3f4b9c392173ac645b8b08f7e271d073,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.242
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897826641022123539, guid: 3f4b9c392173ac645b8b08f7e271d073,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897826641022123539, guid: 3f4b9c392173ac645b8b08f7e271d073,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7897826641832828825, guid: 3f4b9c392173ac645b8b08f7e271d073,
         type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897826641832828830, guid: 3f4b9c392173ac645b8b08f7e271d073,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7897826641832828831, guid: 3f4b9c392173ac645b8b08f7e271d073,
         type: 3}
