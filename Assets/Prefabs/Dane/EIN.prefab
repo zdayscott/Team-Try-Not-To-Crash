@@ -322,8 +322,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 165fe3d918126274084a46519846b01d, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -334,7 +334,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Rebuke
 --- !u!1 &6342044075779618801
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64edd0f04e7abcc4da5a4daef0f009d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ship: {fileID: 0}
   firstWorld: {fileID: 4900000, guid: 3b205020ed8431e47a0e9d285deb21d4, type: 3}
   displayText: {fileID: 6342044075779618807}
 --- !u!1 &6342044076677591050
@@ -565,8 +566,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 165fe3d918126274084a46519846b01d, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -577,7 +578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Reassure
 --- !u!1 &6342044076749596388
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +592,7 @@ GameObject:
   - component: {fileID: 6342044076749596394}
   - component: {fileID: 6342044076749596395}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: EIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
