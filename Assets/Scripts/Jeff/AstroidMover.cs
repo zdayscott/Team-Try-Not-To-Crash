@@ -59,7 +59,6 @@ public class AstroidMover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.tag == "Projectile")
         {
             if (this.transform.localScale.x <= 1)
