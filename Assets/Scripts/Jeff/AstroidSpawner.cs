@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AstroidSpawner : MonoBehaviour
 {
@@ -11,8 +9,22 @@ public class AstroidSpawner : MonoBehaviour
     public Transform player;
     public float minDistance = 10;
     public float size;
-    
+
+    [SerializeField]
+    private float minSpawnTime = 2.5f;
+    [SerializeField]
+    private float maxSpawnTime = 5;
+    [SerializeField]
+    private float velocityScaler = 0.2f;
+
+    [SerializeField]
+    private float[] min = {2.5f, 2, 1.5f, 1.2f, 1, 0.5f};
+    [SerializeField]
+    private float[] max = {5, 4, 3.75f, 3, 2.5f, 2};
+    private int currentDifficultyIndex = 0;
+
     private float nextAst;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +42,8 @@ public class AstroidSpawner : MonoBehaviour
         if(nextAst < Time.deltaTime)
         {
             CreateSmallAsteroids();
-            nextAst = Random.Range(2, 4);
+            nextAst = Random.Range(min[currentDifficultyIndex], max[currentDifficultyIndex]);
         }
-
     }
 
     float SpawnDistance(Vector3 playerPos, Vector3 spawnPos)
@@ -76,6 +87,16 @@ public class AstroidSpawner : MonoBehaviour
        
         
          Random.Range(-100, 100);
-        rb.AddForce(new Vector3(xSpeed, 155, 0f));
+         rb.AddForce(new Vector3(xSpeed * (1 + velocityScaler), 155 * (1 + velocityScaler), 0f));
+    }
+
+    public void DifficultyUp()
+    {
+        if(currentDifficultyIndex < 5)
+        {
+            currentDifficultyIndex++;
+        }
+
+        velocityScaler *= 2;
     }
 }
