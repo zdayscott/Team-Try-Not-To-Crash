@@ -24,12 +24,19 @@ public class sceneManager : MonoBehaviour
     }
     public void switchToCredits()
     {
+       
         SceneManager.LoadScene(creditsScene);
     }
 
     public void switchToTitleScene()
     {
+
+
         SceneManager.LoadScene(titleScene);
+        SoundManager.instance.MusicStart();
+        SoundManager.instance.EinIsDead();
+        SoundManager.instance.EinPulseStop();
+
     }
     public void quitGame()
     {
@@ -37,6 +44,11 @@ public class sceneManager : MonoBehaviour
     }
     public void switchToGame()
     {
+
+       
         SceneManager.LoadScene(mainGame);
+        SoundManager.instance.EinIsHappySfx();
+        SoundManager.instance.EinPulseStart();
+        SoundManager.instance.MusicStop();
     }
 }

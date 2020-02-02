@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource einGettingSadSource;
     public AudioSource einDepressedSource;
     public AudioSource einPulse;
+    public AudioSource menuMusic;
+    public AudioClip robotIntro;
 
 
     public static SoundManager instance = null;
@@ -72,6 +74,37 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
     }
+    public static IEnumerator EinFadeOut(AudioSource fadeInSource, AudioSource fadeOutSourceOne, AudioSource fadeOutSourceTwo, float fadeTimer)
+    {
+
+
+        float startVolumeOne = fadeOutSourceOne.volume;
+        float startVolumeTwo = fadeOutSourceTwo.volume;
+        float startVolumeThree = fadeInSource.volume;
+        while (fadeInSource.volume > 1)
+        {
+            fadeInSource.volume -= startVolumeThree * Time.deltaTime / fadeTimer;
+
+            yield return null;
+        }
+        while (fadeOutSourceOne.volume > 0)
+        {
+            fadeOutSourceOne.volume -= startVolumeOne * Time.deltaTime / fadeTimer;
+            yield return null;
+        }
+        while (fadeOutSourceTwo.volume > 0)
+        {
+            fadeOutSourceTwo.volume -= startVolumeTwo * Time.deltaTime / fadeTimer;
+            yield return null;
+        }
+    }
+
+    public void EinIsDead()
+    {
+
+        StartCoroutine(EinFadeOut(einHappySource, einGettingSadSource, einDepressedSource, 1.0f));
+
+    }
     public void EinIsHappySfx()
     {
 
@@ -90,6 +123,55 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(EinFadeIn(einDepressedSource, einGettingSadSource, einHappySource, 1.0f));
 
     }
+
+    public static IEnumerator MusicFadeIn (AudioSource MusicSource, float musicfader)
+    {
+       MusicSource.volume = 0f;
+
+        while (MusicSource.volume < 1)
+        {
+            MusicSource.volume += Time.deltaTime / musicfader;
+
+            yield return null;
+        }
+
+    }
+    public void MusicStart()
+    {
+
+        StartCoroutine(MusicFadeIn(menuMusic, 1.0f));
+
+    }
+    public static IEnumerator MusicFadeOut(AudioSource MusicSource, float fader)
+    {
+        float startVolumeOne = MusicSource.volume;
+        while (MusicSource.volume > 0)
+        {
+            MusicSource.volume -= startVolumeOne * Time.deltaTime / fader;
+            yield return null;
+        }
+        yield return null;
+    }
+    public void MusicStop()
+    {
+
+        StartCoroutine(MusicFadeOut(menuMusic, 1.0f));
+
+    }
+    public void EinPulseStart()
+    {
+
+        StartCoroutine(MusicFadeIn(einPulse, 1.0f));
+
+    }
+    public void EinPulseStop()
+    {
+
+        StartCoroutine(MusicFadeOut(einPulse, 1.0f));
+
+    }
+
+
 
 
 }
