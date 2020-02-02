@@ -6,9 +6,12 @@ public class ShipController : MonoBehaviour
     private IThruster mThruster;
     private ITurner mTurner;
     private IShooter mShooter;
+
     [SerializeField]
     private float fireRate = .5f;
     private float timeFromLastFile;
+
+
     public AudioClip shootSfx1;
     public AudioClip shootSfx2;
     public AudioClip shootSfx3;
@@ -16,6 +19,7 @@ public class ShipController : MonoBehaviour
     public AudioClip shootSfx5;
     public AudioClip shootSfx6;
     public AudioClip shootSfx7;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +60,12 @@ public class ShipController : MonoBehaviour
             if(timeFromLastFile >= fireRate)
             {
                 mShooter.Shoot();
-                SoundManager.instance.PlayRandomSfx(shootSfx1, shootSfx2, shootSfx3, shootSfx4, shootSfx5, shootSfx6, shootSfx7);
+
+                if(shootSfx1 && shootSfx2 && shootSfx3 && shootSfx4 && shootSfx5 && shootSfx6 && shootSfx7)
+                {
+                    SoundManager.instance.PlayRandomSfx(shootSfx1, shootSfx2, shootSfx3, shootSfx4, shootSfx5, shootSfx6, shootSfx7);
+                }
+
                 timeFromLastFile = 0;
             }
         }

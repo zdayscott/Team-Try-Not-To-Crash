@@ -68,7 +68,11 @@ public class ShipComponentManager : MonoBehaviour
     public void HarmShip()
     {
         int seed = Random.Range(0, 2);
-        SoundManager.instance.PlayRandomSfx(eindamage1, eindamage2, eindamage3, eindamage4);
+
+        if(eindamage1 && eindamage2 && eindamage3 && eindamage4)
+        {
+            SoundManager.instance.PlayRandomSfx(eindamage1, eindamage2, eindamage3, eindamage4);
+        }
 
         switch (seed)
         {
@@ -114,7 +118,11 @@ public class ShipComponentManager : MonoBehaviour
     public void RepairShip()
     {
         int seed = Random.Range(0, 2);
-        SoundManager.instance.PlayRandomSfx(einRepair1, einRepair2, einRepair3, einRepair4);
+
+        if(einRepair1 && einRepair2 && einRepair3 && einRepair4)
+        {
+            SoundManager.instance.PlayRandomSfx(einRepair1, einRepair2, einRepair3, einRepair4);
+        }
 
         switch (seed)
         {
