@@ -6,7 +6,9 @@ public class ShipController : MonoBehaviour
     private IThruster mThruster;
     private ITurner mTurner;
     private IShooter mShooter;
-
+    [SerializeField]
+    private float fireRate = .5f;
+    private float timeFromLastFile;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,8 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeFromLastFile += Time.deltaTime;
+
         if(Input.GetButton("Vertical"))
         {
             //Debug.Log("Thrusting!!");
@@ -42,7 +46,11 @@ public class ShipController : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            mShooter.Shoot();
+            if(timeFromLastFile >= fireRate)
+            {
+                mShooter.Shoot();
+                timeFromLastFile = 0;
+            }
         }
     }
 
