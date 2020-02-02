@@ -27,7 +27,7 @@ public class Healthbar : MonoBehaviour
         {
             currentHealth += change;
         }
-        if (currentHealth > 1 && change < 0)
+        if (currentHealth > 0 && change < 0)
         {
             currentHealth += change;
         }
@@ -67,6 +67,7 @@ public class Healthbar : MonoBehaviour
     }
     public void death()
     {
-
+        sceneManager.Instance.SetEndGame(FindObjectOfType<EINmanager>().getPercent(), ScoreManager.instance.GetAstHit(), ScoreManager.instance.GetTime());
+        sceneManager.Instance.switchToEndGame();
     }
 }

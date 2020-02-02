@@ -83,7 +83,7 @@ public class sceneManager : MonoBehaviour
 
         if (manualSwitch && Input.GetKeyDown("p"))
         {
-            endGame();
+            switchToEndGame();
         }
         timeElapsed += Time.deltaTime;
         if (timeElapsed >= 1f)
@@ -123,10 +123,17 @@ public class sceneManager : MonoBehaviour
         buttonAssigner();
     }
 
-    public void endGame()
+    public void switchToEndGame()
     {
         SceneManager.LoadScene(endScene);
         buttonAssigner();
 
+    }
+
+    public void SetEndGame(float correct, int astHit, float timeS)
+    {
+        percentCorrect = correct;
+        asteroidsHit = astHit;
+        timeSurvived = timeS;
     }
 }

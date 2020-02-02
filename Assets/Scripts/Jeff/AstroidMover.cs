@@ -66,6 +66,7 @@ public class AstroidMover : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
+                ScoreManager.instance.PlayerShootAst();
             }
             else
             {
