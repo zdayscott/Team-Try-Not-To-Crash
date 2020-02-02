@@ -42,7 +42,6 @@ public class AstroidMover : MonoBehaviour
     void Update()
     {
         rock.transform.Rotate(new Vector3(0f, 0f, rotZ) * Time.deltaTime);
-        //checkPosition();
         float dynamicMaxSpeed = 3f;
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -dynamicMaxSpeed, dynamicMaxSpeed), Mathf.Clamp(rb.velocity.y, -dynamicMaxSpeed, dynamicMaxSpeed));
     }
@@ -52,6 +51,39 @@ public class AstroidMover : MonoBehaviour
        if (collision.tag == "Boarder")
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "Projectile")
+        {
+            if (this.transform.localScale.x <= 1)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Split();
+            }
+        }
+        if (collision.tag == "Ship")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void Split()
+    {
+        Vector3 newSize = new Vector3(this.transform.localScale.x / 2, this.transform.localScale.y / 2, 1);
+        rock.transform.localScale = newSize;
+
+        Vector3 spawnPos = this.transform.localPosition;
+        for (int x = 0; x < 2; x++)
+        {
+            GameObject AsteroidClone = Instantiate(rock, spawnPos, Quaternion.identity);
+            rb.AddForce(new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0f));
         }
     }
 

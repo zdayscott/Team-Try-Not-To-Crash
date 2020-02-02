@@ -10,6 +10,7 @@ public class AstroidSpawner : MonoBehaviour
     private Vector3 playerPos;
     public Transform player;
     public float minDistance = 10;
+    public float size;
     
     private float nextAst;
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class AstroidSpawner : MonoBehaviour
         if(nextAst < Time.deltaTime)
         {
             CreateSmallAsteroids();
-            nextAst = Random.Range(1, 4);
+            nextAst = Random.Range(2, 4);
         }
 
     }
@@ -43,19 +44,23 @@ public class AstroidSpawner : MonoBehaviour
     void CreateSmallAsteroids()
     {
         rb = rock.GetComponent<Rigidbody2D>();
-      //  float distance;
+        float distance;
         float xPos;
         float zPos;
         Vector3 rockPos;
         //this checks if asteroids is going to spawn too close to the player
-       // do {
+        do {
             xPos = Random.Range(-10, 10);
             zPos = Random.Range(-10, 10);
             rockPos = new Vector3(xPos, 0, zPos);            
-         //   distance = SpawnDistance(playerPos, rockPos);
-       // } while (distance < minDistance);
+            distance = SpawnDistance(playerPos, rockPos);
+        } while (distance < minDistance);
 
-       // print("Rock spawned at " + xPos + ", 0, " + zPos);
+        //This determines max size of the asteroids
+        float scaler = Random.Range(1, 4);
+        Vector3 randomScale = new Vector3(scaler, scaler, 1);
+        rock.transform.localScale = randomScale;
+
         GameObject AsteroidClone = Instantiate(rock, rockPos, Quaternion.identity);
         float xSpeed;
         float ySpeed;
