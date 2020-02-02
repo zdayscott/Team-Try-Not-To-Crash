@@ -10,6 +10,9 @@ public class EINmanager : MonoBehaviour
     public TextAsset firstWorld;
     public Text displayText;
     public Slider timerSlider;
+    public Image einBorder;
+    public Color green = new Color(45f, 154f, 0f);
+    Color red = new Color(255f, 0f, 0f);
 
     public float maxTime = 5f;
     private float currentTime;
@@ -112,9 +115,10 @@ public class EINmanager : MonoBehaviour
         currentTime = maxTime;
         getLine();
         getInts();
-        
+        einBorder.color = Color.green;
         if (currentOptions.Contains(i))
         {
+            einBorder.color = Color.green;
             totalCorrect++;
             wrongAnswers = 0;
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
@@ -137,6 +141,7 @@ public class EINmanager : MonoBehaviour
         }
         else
         {
+            einBorder.color = new Color(255f, 0f, 0f);
             totalWrong++;
             correctAnswers = 0;
             
