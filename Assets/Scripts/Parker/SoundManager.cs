@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource einHappySource;
     public AudioSource einGettingSadSource;
     public AudioSource einDepressedSource;
+    public AudioSource einPulse;
+
 
     public static SoundManager instance = null;
 
