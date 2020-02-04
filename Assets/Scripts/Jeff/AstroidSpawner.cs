@@ -63,8 +63,6 @@ public class AstroidSpawner : MonoBehaviour
         float yPos;
         Vector3 rockPos;
 
-        print(player.position);
-
         //this checks if asteroids is going to spawn too close to the player
         do {
             xPos = Random.Range(-spawnRange, spawnRange);
