@@ -63,12 +63,14 @@ public class AstroidSpawner : MonoBehaviour
         float yPos;
         Vector3 rockPos;
 
+        print(player.position);
+
         //this checks if asteroids is going to spawn too close to the player
         do {
             xPos = Random.Range(-spawnRange, spawnRange);
             yPos = Random.Range(-spawnRange, spawnRange);
-            rockPos = new Vector3(xPos, yPos, 0);            
-            distance = SpawnDistance(playerPos, rockPos);
+            rockPos = new Vector3(xPos, yPos, 0);
+            distance = SpawnDistance(player.position, rockPos);
         } while (distance < minDistance);
 
         //This determines max size of the asteroids
@@ -78,7 +80,7 @@ public class AstroidSpawner : MonoBehaviour
 
         GameObject AsteroidClone = Instantiate(rock, rockPos, Quaternion.identity);
         float xSpeed;
-        float ySpeed;
+        //float ySpeed;
 
         if (xPos > 0)
         {

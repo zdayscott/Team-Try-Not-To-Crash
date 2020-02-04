@@ -40,6 +40,7 @@ public class EINmanager : MonoBehaviour
     private GameObject sadBoi;
 
     private int happiness = 9;
+    private Healthbar healthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class EINmanager : MonoBehaviour
         firstWorldLines = firstWorld.text.Split('\n').ToList();
         displayText.text = "Hello world. My name is E.I.N., or Emotionally Intelligent Network. How can I assist you today?";
         currentTime = maxTime;
+        healthbar = FindObjectOfType<Healthbar>();
     }
     private void Update()
     {
@@ -127,6 +129,11 @@ public class EINmanager : MonoBehaviour
                 if(happiness < 9)
                 {
                     happiness++;
+
+                    if(happiness > 5 && healthbar.currentHealth < 4)
+                    {
+                        healthbar.currentHealth++;
+                    }
                 }
             }
             if (correctAnswers >= 5)
@@ -151,6 +158,10 @@ public class EINmanager : MonoBehaviour
                 if(happiness > 0)
                 {
                     happiness--;
+                    if(happiness == 0)
+                    {
+                        healthbar.currentHealth = 1;
+                    }
                 }
             }
             if (wrongStreaks[1] == 0)
