@@ -39,6 +39,9 @@ public class EINmanager : MonoBehaviour
     [SerializeField]
     private GameObject sadBoi;
 
+    [SerializeField]
+    private GameObject effectIndicator;
+
     private int happiness = 9;
     private Healthbar healthbar;
 
@@ -126,6 +129,8 @@ public class EINmanager : MonoBehaviour
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
                 ship.GetComponent<ShipComponentManager>().RepairShip();
+                Instantiate(effectIndicator);
+
                 if(happiness < 9)
                 {
                     happiness++;
@@ -154,8 +159,14 @@ public class EINmanager : MonoBehaviour
             
             for (int j = 0; j < wrongStreaks[wrongAnswers]; ++j)
             {
-                ship.GetComponent<ShipComponentManager>().HarmShip();
-                if(happiness > 0)
+                if (UnityEngine.Random.Range(0, 100) > 60)
+                {
+                    ship.GetComponent<ShipComponentManager>().HarmShip();
+                    var effect = Instantiate(effectIndicator);
+                    effect.GetComponent<EINEffectIndicator>();
+                }
+
+                if (happiness > 0)
                 {
                     happiness--;
                     if(happiness == 0)

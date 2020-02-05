@@ -14,6 +14,9 @@ public class AstroidMover : MonoBehaviour
     private Rigidbody2D rb;
     private int _generation = 0;
 
+    [SerializeField]
+    private GameObject Explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +69,7 @@ public class AstroidMover : MonoBehaviour
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
                 ScoreManager.instance.PlayerShootAst();
+                Explode();
             }
             else
             {
@@ -78,6 +82,13 @@ public class AstroidMover : MonoBehaviour
             
             Destroy(this.gameObject);
         }
+    }
+
+    private void Explode()
+    {
+        var pos = transform.position;
+        var rot = transform.rotation;
+        Instantiate(Explosion, pos, rot);
     }
 
     private void Split()
