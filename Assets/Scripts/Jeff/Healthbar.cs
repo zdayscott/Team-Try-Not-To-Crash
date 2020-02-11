@@ -5,7 +5,7 @@ public class Healthbar : MonoBehaviour
 {
     private GameObject textBox;
     public Text healthBar;
-    public float currentHealth;
+    public int currentHealth;
 
     [SerializeField]
     private Slider slider;
@@ -63,7 +63,7 @@ public class Healthbar : MonoBehaviour
             death();
         }
 
-        slider.value = currentHealth/4;
+        slider.value = (float)currentHealth/4;
     }
     public void death()
     {

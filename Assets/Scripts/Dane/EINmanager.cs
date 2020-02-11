@@ -45,6 +45,8 @@ public class EINmanager : MonoBehaviour
     private int happiness = 9;
     private Healthbar healthbar;
 
+    float startTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class EINmanager : MonoBehaviour
         displayText.text = "Hello world. My name is E.I.N., or Emotionally Intelligent Network. How can I assist you today?";
         currentTime = maxTime;
         healthbar = FindObjectOfType<Healthbar>();
+        startTime = Time.time;
     }
     private void Update()
     {
@@ -128,16 +131,23 @@ public class EINmanager : MonoBehaviour
             wrongAnswers = 0;
             for (int j = 0; j < correctStreaks[correctAnswers]; ++j)
             {
-                ship.GetComponent<ShipComponentManager>().RepairShip();
-                Instantiate(effectIndicator);
+                if (UnityEngine.Random.Range(0, 100) < 30 * (happiness / 3) + ((Time.time - startTime) / 15))
+                {
+                    if (ship.GetComponent<ShipComponentManager>().RepairShip())
+                    {
+                        var effect = Instantiate(effectIndicator);
+                        effect.GetComponent<EINEffectIndicator>().OnRepair();
+                    }
+                }
 
-                if(happiness < 9)
+                if (happiness < 9)
                 {
                     happiness++;
 
                     if(happiness > 5 && healthbar.currentHealth < 4)
                     {
-                        healthbar.currentHealth++;
+                        //healthbar.currentHealth++;
+                        healthbar.changeHealth(1);
                     }
                 }
             }
@@ -159,11 +169,13 @@ public class EINmanager : MonoBehaviour
             
             for (int j = 0; j < wrongStreaks[wrongAnswers]; ++j)
             {
-                if (UnityEngine.Random.Range(0, 100) > 60)
+                if (UnityEngine.Random.Range(0, 100) > 30 * (happiness/3) - ((Time.time - startTime) / 15))
                 {
-                    ship.GetComponent<ShipComponentManager>().HarmShip();
-                    var effect = Instantiate(effectIndicator);
-                    effect.GetComponent<EINEffectIndicator>();
+                    if(ship.GetComponent<ShipComponentManager>().HarmShip())
+                    {
+                        var effect = Instantiate(effectIndicator);
+                        effect.GetComponent<EINEffectIndicator>().OnDamage();
+                    }
                 }
 
                 if (happiness > 0)
@@ -171,7 +183,8 @@ public class EINmanager : MonoBehaviour
                     happiness--;
                     if(happiness == 0)
                     {
-                        healthbar.currentHealth = 1;
+                        //healthbar.currentHealth = 1;
+                        healthbar.changeHealth(-1 * healthbar.currentHealth + 1);
                     }
                 }
             }

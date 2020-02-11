@@ -20,6 +20,8 @@ public class ShipController : MonoBehaviour
     public AudioClip shootSfx6;
     public AudioClip shootSfx7;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,8 @@ public class ShipController : MonoBehaviour
         {
             mShooter = GetComponent<IShooter>();
         }
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -86,6 +90,10 @@ public class ShipController : MonoBehaviour
         mShooter = s;
     }
 
+    public void OnDamageTaken()
+    {
+        animator.Play("ShipDamage");
+    }
 
 }
 

@@ -65,8 +65,10 @@ public class ShipComponentManager : MonoBehaviour
         }
     }
 
-    public void HarmShip()
+    public bool HarmShip()
     {
+        bool ret = true;
+
         int seed = Random.Range(0, 2);
 
         if(eindamage1 && eindamage2 && eindamage3 && eindamage4)
@@ -83,7 +85,7 @@ public class ShipComponentManager : MonoBehaviour
                     {
                         if(!DamageShooters())
                         {
-
+                            ret = false;
                         }
                     }
                 }
@@ -95,7 +97,7 @@ public class ShipComponentManager : MonoBehaviour
                     {
                         if(!DamageThrusters())
                         {
-
+                            ret = false;
                         }
                     }
                 }
@@ -107,16 +109,19 @@ public class ShipComponentManager : MonoBehaviour
                     {
                         if(!DamageTurners())
                         {
-
+                            ret = false;
                         }
                     }
                 }
                 break;
         }
+
+        return ret;
     }
 
-    public void RepairShip()
+    public bool RepairShip()
     {
+        bool ret = true;
         int seed = Random.Range(0, 2);
 
         if(einRepair1 && einRepair2 && einRepair3 && einRepair4)
@@ -133,7 +138,7 @@ public class ShipComponentManager : MonoBehaviour
                     {
                         if (!RepairShooters())
                         {
-
+                            ret = false;
                         }
                     }
                 }
@@ -145,7 +150,7 @@ public class ShipComponentManager : MonoBehaviour
                     {
                         if (!RepairThrusters())
                         {
-
+                            ret = false;
                         }
                     }
                 }
@@ -157,12 +162,14 @@ public class ShipComponentManager : MonoBehaviour
                     {
                         if (!RepairTurners())
                         {
-
+                            ret = false;
                         }
                     }
                 }
                 break;
         }
+
+        return ret;
     }
 
     private bool DamageThrusters()

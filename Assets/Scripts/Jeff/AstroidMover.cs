@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class AstroidMover : MonoBehaviour
@@ -15,12 +13,16 @@ public class AstroidMover : MonoBehaviour
     private int _generation = 0;
 
     [SerializeField]
+    private Sprite[] sprites;
+
+    [SerializeField]
     private GameObject Explosion;
 
     // Start is called before the first frame update
     void Start()
     {
         healthBar = GameObject.Find("Health");
+        
         rock = this.gameObject;
         rb = rock.GetComponent<Rigidbody2D>();
         maxRotation = 25f;
@@ -39,17 +41,23 @@ public class AstroidMover : MonoBehaviour
             dirY = 1;
         }
         float finalSpeedY = speedY * dirY;
-        float xSpeed = Random.Range(-100, 100);
+        float xSpeed = Random.Range(10, 100);
         float ySpeed = Random.Range(-100, 100);
-        rb.AddForce(new Vector3(1f * xSpeed, 1f * ySpeed, 0f));
+        //rb.AddForce(transform.forward * xSpeed);
+        
+
+        GetComponentInChildren<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(transform.right * Random.Range(30,100));
     }
 
     // Update is called once per frame
     void Update()
     {
         rock.transform.Rotate(new Vector3(0f, 0f, rotZ) * Time.deltaTime);
-        float dynamicMaxSpeed = 3f;
-        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -dynamicMaxSpeed, dynamicMaxSpeed), Mathf.Clamp(rb.velocity.y, -dynamicMaxSpeed, dynamicMaxSpeed));
+        //float dynamicMaxSpeed = 3f;
+        //rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -dynamicMaxSpeed, dynamicMaxSpeed), Mathf.Clamp(rb.velocity.y, -dynamicMaxSpeed, dynamicMaxSpeed));
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -78,7 +86,8 @@ public class AstroidMover : MonoBehaviour
         }
         if (collision.tag == "Ship")
         {            
-            healthBar.GetComponent<Healthbar>().changeHealth(-1);  
+            healthBar.GetComponent<Healthbar>().changeHealth(-1);
+            collision.gameObject.GetComponent<ShipController>().OnDamageTaken();
             
             Destroy(this.gameObject);
         }
@@ -99,8 +108,8 @@ public class AstroidMover : MonoBehaviour
         Vector3 spawnPos = this.transform.localPosition;
         for (int x = 0; x < 2; x++)
         {
-            GameObject AsteroidClone = Instantiate(rock, spawnPos, Quaternion.identity);
-            rb.AddForce(new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0f));
+            GameObject AsteroidClone = Instantiate(rock, spawnPos, Quaternion.Euler(0,0,Random.Range(0,359)));
+            //rb.AddForce(new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0f));
         }
     }
 

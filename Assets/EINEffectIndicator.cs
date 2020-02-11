@@ -12,8 +12,24 @@ public class EINEffectIndicator : MonoBehaviour
 
     [SerializeField]
     private float lerpTime = .6f;
+    [SerializeField]
+    private float startTime = .3f;
     private float currentTime = 0f;
-    private bool readyToMove = true;
+    private bool readyToMove = false;
+
+    [SerializeField]
+    private GameObject repairIcon;
+    [SerializeField]
+    private GameObject damageIcon;
+    [SerializeField]
+    private SpriteRenderer BG;
+    [SerializeField]
+    private Color repairBG;
+    [SerializeField]
+    private Color damageBG;
+
+    private Vector3 startSpot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +37,8 @@ public class EINEffectIndicator : MonoBehaviour
         startScale = this.transform.localScale;
         endScale = startScale * shrinkPercent;
         ship = FindObjectOfType<ShipController>().gameObject.transform;
+        startSpot = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0) + this.transform.position;
+
     }
 
     // Update is called once per frame
@@ -29,6 +47,27 @@ public class EINEffectIndicator : MonoBehaviour
         if(readyToMove)
         {
             MoveTowardShip();
+        }
+        else
+        {
+            MoveToStartSpot();
+        }
+    }
+
+    void MoveToStartSpot()
+    {
+        currentTime += Time.deltaTime;
+        float percentComplete = currentTime / startTime;
+        if(percentComplete >= 1)
+        {
+            readyToMove = true;
+            currentTime = 0;
+            startPos = this.transform.position;
+            return;
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(startPos, startSpot, percentComplete);
         }
     }
 
@@ -51,5 +90,17 @@ public class EINEffectIndicator : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void OnDamage()
+    {
+        damageIcon.SetActive(true);
+        BG.color = damageBG;
+    }
+
+    public void OnRepair()
+    {
+        repairIcon.SetActive(true);
+        BG.color = repairBG;
     }
 }

@@ -28,6 +28,9 @@ public class AstroidSpawner : MonoBehaviour
     [SerializeField]
     private float spawnRange = 5;
 
+    [SerializeField]
+    private Transform[] spawnpoints;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +47,7 @@ public class AstroidSpawner : MonoBehaviour
         nextAst -= Time.deltaTime;
         if(nextAst < Time.deltaTime)
         {
-            CreateSmallAsteroids();
+            spawnAsteroid();
             nextAst = Random.Range(min[currentDifficultyIndex], max[currentDifficultyIndex]);
         }
     }
@@ -92,6 +95,12 @@ public class AstroidSpawner : MonoBehaviour
         
          Random.Range(-100, 100);
          rb.AddForce(new Vector3(xSpeed * (1 + velocityScaler), 155 * (1 + velocityScaler), 0f));
+    }
+
+    private void spawnAsteroid()
+    {
+        print("Spawning Asteroid!!!");
+        GameObject aster = Instantiate(rock, spawnpoints[Random.Range(0, spawnpoints.Length - 1)]);
     }
 
     public void DifficultyUp()

@@ -160,11 +160,11 @@ public class sceneManager : MonoBehaviour
     private string endScreenString()
     {
         string finalString = "";
-        finalString += "Percent correct with E.I.N. - " + (100f * percentCorrect) + "%\n";
+        finalString += "Percent correct with E.I.N. - " + (100f * percentCorrect).ToString("F2") + "%\n";
         finalString += "Asteroids hit - " + asteroidsHit + "\n";
-        finalString += "Time survived - " + timeSurvived + " seconds\n";
+        finalString += "Time survived - " + timeSurvived.ToString("F2") + " seconds\n";
         finalString += "-----------------------------\n";
-        finalString += "TOTAL SCORE - " + ((10f * timeSurvived + (float)asteroidsHit) * (1f + percentCorrect));
+        finalString += "TOTAL SCORE - " + ((10f * timeSurvived + (float)asteroidsHit) * (1f + percentCorrect)).ToString("F2");
 
 
         return finalString;
