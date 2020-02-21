@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 59c2f3f44cd4b8043a2eaa8180a8d461, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,6 +135,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 310d526227bae444a9674b809776f7fb, type: 3}
   Explosion: {fileID: 5528852533444206547, guid: b1c108ee7b0a18c4e8202d4c844042ab,
     type: 3}
+  ShipPickups:
+  - {fileID: 6727238287461222197, guid: ebd573a6af7f77b4b9ac0af671bf208a, type: 3}
 --- !u!50 &1578154510001809052
 Rigidbody2D:
   serializedVersion: 4

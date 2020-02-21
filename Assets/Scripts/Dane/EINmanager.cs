@@ -30,7 +30,7 @@ public class EINmanager : MonoBehaviour
     private int totalCorrect = 0;
     private int totalWrong = 0;
     private int[] correctStreaks = { 1, 1, 1, 2, 2, 2, 2 };
-    private int[] wrongStreaks = { 0, 1, 1, 1, 1, 1, 1, 1, 1 };
+    private int[] wrongStreaks = { 0, 1, 1, 1, 2, 2, 3, 3, 3 };
 
     [SerializeField]
     private GameObject happyBoi;
@@ -166,7 +166,7 @@ public class EINmanager : MonoBehaviour
             einBorder.color = new Color(255f, 0f, 0f);
             totalWrong++;
             correctAnswers = 0;
-            
+
             for (int j = 0; j < wrongStreaks[wrongAnswers]; ++j)
             {
                 if (UnityEngine.Random.Range(0, 100) > 30 * (happiness/3) - ((Time.time - startTime) / 15))
@@ -234,5 +234,14 @@ public class EINmanager : MonoBehaviour
     public float getPercent()
     {
         return (float)totalCorrect / (float)(totalCorrect + totalWrong);
+    }
+
+    public void MakeHappier()
+    {
+        if(happiness < 9)
+        {
+            happiness++;
+            UpdateEINFace();
+        }
     }
 }

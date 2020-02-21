@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EINEffectIndicator : MonoBehaviour
+public class ShipPickup : MonoBehaviour
 {
     [SerializeField]
     Transform target;
@@ -15,23 +15,24 @@ public class EINEffectIndicator : MonoBehaviour
     [SerializeField]
     private float lerpTime = .6f;
     [SerializeField]
-    private float spawnTime = .3f;
+    private float lifeTime = 7f;
     private float currentTime = 0f;
+    private float LifeTime = 0f;
     private bool readyToMove = false;
 
     [Header("Art Assets")]
     [SerializeField]
-    private GameObject repairIcon;
-    [SerializeField]
-    private GameObject damageIcon;
-    [SerializeField]
     private SpriteRenderer BG;
+    [SerializeField]
+    private SpriteRenderer icon;
     [SerializeField]
     private Color repairBG;
     [SerializeField]
     private Color damageBG;
 
     private Vector3 startSpot;
+
+    bool fading = true;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class EINEffectIndicator : MonoBehaviour
         startSpot = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0) + this.transform.position;
         if (target == null)
         {
-            target = FindObjectOfType<ShipController>().gameObject.transform;
+            target = FindObjectOfType<EINColider>().gameObject.transform;
         }
 
     }
@@ -50,63 +51,54 @@ public class EINEffectIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(readyToMove)
+        if (readyToMove)
         {
-            MoveTowardShip();
+            MoveTowardTarget();
         }
-        else
+        LifeTime += Time.deltaTime;
+
+        if(LifeTime >= lifeTime)
         {
-            MoveToStartSpot();
+            Destroy(this.gameObject);
+        }
+        else if(fading)
+        {
+            BG.color = new Color(BG.color.r, BG.color.g, BG.color.b, 1 - LifeTime / lifeTime);
+            icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, 1 - LifeTime / lifeTime);
         }
     }
 
-    void MoveToStartSpot()
-    {
-        currentTime += Time.deltaTime;
-        float percentComplete = currentTime / spawnTime;
-        if(percentComplete >= 1)
-        {
-            readyToMove = true;
-            currentTime = 0;
-            startPos = this.transform.position;
-            return;
-        }
-        else
-        {
-            transform.position = Vector3.Lerp(startPos, startSpot, percentComplete);
-        }
-    }
-
-    void MoveTowardShip()
+    void MoveTowardTarget()
     {
         currentTime += Time.deltaTime;
         float percentComplete = currentTime / lerpTime;
         if (percentComplete > .97)
         {
+            print("Make EIN happier!");
+            FindObjectOfType<EINmanager>().MakeHappier();
             Destroy(this.gameObject);
         }
 
         transform.position = Vector3.Lerp(startPos, target.position, percentComplete);
         transform.localScale = Vector3.Lerp(startScale, endScale, percentComplete);
+
+        fading = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Ship"))
+        //print("Colliding");
+        if (collision.gameObject.CompareTag("EIN"))
         {
+            print("Make EIN happier!");
+            FindObjectOfType<EINmanager>().MakeHappier();
             Destroy(this.gameObject);
         }
-    }
-
-    public void OnDamage()
-    {
-        damageIcon.SetActive(true);
-        BG.color = damageBG;
-    }
-
-    public void OnRepair()
-    {
-        repairIcon.SetActive(true);
-        BG.color = repairBG;
+        if(collision.gameObject.tag == "Ship")
+        {
+            //print("coliding with ship");
+            readyToMove = true;
+            //GetComponent<CircleCollider2D>().isTrigger = true;
+        }
     }
 }

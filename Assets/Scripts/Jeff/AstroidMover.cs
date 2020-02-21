@@ -17,6 +17,8 @@ public class AstroidMover : MonoBehaviour
 
     [SerializeField]
     private GameObject Explosion;
+    [SerializeField]
+    private GameObject[] ShipPickups;
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +100,11 @@ public class AstroidMover : MonoBehaviour
         var pos = transform.position;
         var rot = transform.rotation;
         Instantiate(Explosion, pos, rot);
+        var seed = Random.Range(1, 100);
+        if (seed > 35)
+        {
+            Instantiate(ShipPickups[Random.Range(0, ShipPickups.Length - 1)], pos, rot);
+        }
     }
 
     private void Split()

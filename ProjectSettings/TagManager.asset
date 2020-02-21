@@ -9,6 +9,7 @@ TagManager:
   - SmlAst
   - Boarder
   - LrgAst
+  - EIN
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Radar Love
+    uniqueID: 3478261725
     locked: 0
